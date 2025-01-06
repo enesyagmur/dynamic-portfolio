@@ -1,8 +1,19 @@
+@import "@fontsource/poppins";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
+}
+
+body {
+  font-family: "poppins";
+}
+
+.profile-image {
+  mask-image: linear-gradient(black 1%, transparent 99%);
 }

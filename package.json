@@ -9,6 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/fira-code": "^5.1.1",
+    "@fontsource/inconsolata": "^5.1.1",
+    "@fontsource/jetbrains-mono": "^5.1.2",
+    "@fontsource/playfair-display": "^5.1.1",
+    "@fontsource/poppins": "^5.1.1",
+    "@fontsource/source-code-pro": "^5.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",

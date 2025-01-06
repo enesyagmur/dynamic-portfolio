@@ -1,28 +1,65 @@
 import React from "react";
 import { Spotlight } from "../components/ui/Spotlight";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
+import Image from "next/image";
+import pp from "../data/images/transparan-profil.png";
 
 const Hero = () => {
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center relative">
+    <div className="w-full h-[700px] md:h-screen flex flex-col lg:flex-row items-center justify-between md:justify-center relative  overflow-hidden">
       {/* grid background */}
       <div className="w-full h-full bg-grid-white/[0.06] flex items-center justify-center absolute top-0 left-0">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
 
+      {/* spotlights */}
       <div>
+        {/* Blue */}
         <Spotlight
-          className="-top-40 -left-10 md:-left-30 md:-top-20 h-screen"
-          fill="#00ff00"
-        />
-        <Spotlight
-          className="top-10 left-96  h-[100vh] w-[50vw]"
+          className="top-20 left-8 lg:top-0 lg:left-8 lg:w-full w-[800px]l"
           fill="#00ffff"
         />
+        {/* Green */}
         <Spotlight
-          className="top-28 left-80  h-[80vh] w-[50vw]"
-          fill="#ff0000"
+          className="top-20 left-40 lg:top-0 lg:left-56 lg:w-full w-[800px]"
+          fill="#00ff00"
         />
+
+        {/* Red */}
+        {
+          <Spotlight
+            className="top-20 left-64 lg:top-0 lg:left-96 lg:w-full w-[800px]"
+            fill="#ff0000"
+          />
+        }
       </div>
+      <TextGenerateEffect
+        words="Merhaba, Ben Enes Frontend Developer'ım."
+        className="w-10/12 h-1/6 lg:w-4/12 lg:h-4/6 flex items-end md:items-start lg:items-center justify-center text-center lg:text-center text-xl md:text-3xl lg:text-4xl"
+      />
+
+      <div className="w-[300px] h-[300px] flex flex-col items-center justify-center relative">
+        <div className="w-[250px] h-[250px] opacity-80  rounded-full bg-neutral-800 z-10 "></div>
+        <div className="w-[300px] h-[300px]  rounded-full bg-neutral-900 absolute"></div>
+
+        <Image
+          src={pp}
+          width={250}
+          height={250}
+          className="profile-image object-cover absolute z-20 ml-24 "
+          alt="Profil Resmi"
+        />
+
+        <button className="w-[120px] h-[40px] lg:w-[180px] lg:h-[50px] rounded-xl bg-highBlack border-[2px] border-neutral-600 absolute -bottom-16 md:-bottom-44 z-50  hover:animate-borderHover">
+          İletişim
+        </button>
+      </div>
+
+      <p className="w-9/12 md:w-8/12 lg:w-4/12 h-1/6 lg:h-4/6 lg:px-4 flex items-center justify-center md:tracking-wider text-sm  lg:text-[16px] mt-4 text-center lg:text-center">
+        React, Typescript, Tailwind ve Firebase ile web projeleri
+        geliştiriyorum. Sürekli öğrenerek kendimi geliştirmeyi ve bu alanda bir
+        kariyer hedefliyorum.
+      </p>
     </div>
   );
 };
