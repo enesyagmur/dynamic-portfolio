@@ -90,7 +90,7 @@ export const LampContainer = () => {
           }}
           className="w-11/12 lg:w-8/12  flex flex-col items-center justify-evenly pt-[300px]"
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl">Hakkımda</h1>
+          <h1 className="text-3xl md:text-5xl">Hakkımda</h1>
           <p className="text-sm lg:text-[16px] lg:leading-6 mt-16 md:mt-12">
             Merhaba! Ben 3 Şubat 1999 doğumluyum ve İstanbul’da yaşıyorum.
             Yazılım serüvenim, lise yıllarında web tasarım bölümü ile başladı ve
@@ -119,14 +119,14 @@ export const LampContainer = () => {
             devam ediyorum...
           </p>
           <div className="w-full h-[40px] flex items-center justify-evenly text-3xl mt-4">
-            <FaHtml5 className="text-orange-700" />{" "}
+            <FaHtml5 className="text-orange-700" />
             <FaCss3Alt className="text-blue-400" />
-            <FaSass className="text-pink-500" />{" "}
+            <FaSass className="text-pink-500" />
             <RiTailwindCssFill className="text-teal-600" />
-            <RiJavascriptFill className="text-yellow-600" />{" "}
-            <FaReact className="text-blue-700" />{" "}
+            <RiJavascriptFill className="text-yellow-600" />
+            <FaReact className="text-blue-700" />
             <BiLogoTypescript className="text-blue-500" />
-            <RiNextjsFill className="text-white" />{" "}
+            <RiNextjsFill className="text-white" />
             <IoLogoFirebase className="text-yellow-500" />
           </div>
         </motion.div>

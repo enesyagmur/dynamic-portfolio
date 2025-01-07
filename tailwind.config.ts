@@ -6,6 +6,17 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
+function addVariablesForColors({ addBase, theme }: any) {
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -31,13 +42,11 @@ const config = {
         neonRed: "#ff0000",
         highBlack: "#000000",
       },
-
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         serif: ["Playfair Display", "serif"],
         mono: ["Fira Code", "monospace"],
       },
-
       keyframes: {
         spotlight: {
           "0%": {
@@ -63,7 +72,6 @@ const config = {
             borderBottomColor: "#FFFFFF",
           },
         },
-
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
@@ -78,7 +86,7 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-
+    addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
