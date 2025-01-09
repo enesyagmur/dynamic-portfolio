@@ -83,7 +83,9 @@ export function Projects() {
             >
               <div className="text-sm prose prose-sm dark:prose-invert">
                 <p
-                  className={twMerge("text-xl md:text-2xl mb-4 cursor-pointer")}
+                  className={twMerge(
+                    "text-xl mb-4 cursor-pointer text-neutral-200"
+                  )}
                 >
                   {item.name}
                 </p>
@@ -98,9 +100,9 @@ export function Projects() {
                 )}
               </div>
 
-              <div className="w-full h-[250px] md:h-[200px] flex flex-col items-center justify-evenly">
+              <div className="w-full h-[200px] md:h-[150px] flex flex-col items-center justify-evenly">
                 <div className="w-11/12 h-2/6 flex items-center justify-center">
-                  <div className="w-4/12 h-full flex items-center justify-start text-2xl">
+                  <div className="w-4/12 h-full flex items-center justify-start text-2xl text-neutral-200">
                     <Link
                       href={item.live}
                       className="mr-4  hover:text-blue-500"
@@ -132,12 +134,12 @@ export function Projects() {
                     title="Detay Linki"
                   >
                     <GoArrowRight
-                      className="text-2xl hover:text-purple-500"
+                      className="text-2xl text-purple-500 hover:text-blue-500"
                       title="Proje Detayları"
                     />
                   </Link>
                 </div>
-                <div className="w-11/12 h-3/6 flex items-center justify-center text-sm lg:text-[16px]">
+                <div className="w-11/12 h-3/6 flex items-center justify-center text-sm text-neutral-400">
                   <p>{item.description.title}</p>
                 </div>
               </div>

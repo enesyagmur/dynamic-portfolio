@@ -16,26 +16,26 @@ const Hero = () => {
       <div>
         {/* Blue */}
         <Spotlight
-          className="top-20 left-8 lg:top-0 lg:left-8 lg:w-full w-[800px]l"
-          fill="#00ffff"
+          className="top-20 left-8 lg:top-0 lg:left-8 lg:w-full w-[800px]"
+          fill="#3b82f6"
         />
-        {/* Green */}
+        {/* White */}
         <Spotlight
           className="top-20 left-40 lg:top-0 lg:left-56 lg:w-full w-[800px]"
-          fill="#00ff00"
+          fill="#8b5cf6"
         />
 
-        {/* Red */}
+        {/* Purple */}
         {
           <Spotlight
             className="top-20 left-64 lg:top-0 lg:left-96 lg:w-full w-[800px]"
-            fill="#ff0000"
+            fill="#a855f7"
           />
         }
       </div>
       <TextGenerateEffect
         words="Merhaba, Ben Enes Frontend Developer'ım."
-        className="w-10/12 h-1/6 lg:w-4/12 lg:h-4/6 flex items-end md:items-start lg:items-center justify-center text-center lg:text-center text-xl md:text-3xl lg:text-4xl"
+        className="w-10/12 h-1/6 lg:w-4/12 lg:h-4/6 flex items-end md:items-start lg:items-center justify-center text-center lg:text-center text-xl md:text-4xl lg:text-5xl"
       />
 
       <div className="w-[300px] h-[300px] flex flex-col items-center justify-center relative">
@@ -55,7 +55,7 @@ const Hero = () => {
         </button>
       </div>
 
-      <p className="w-9/12 md:w-8/12 lg:w-4/12 h-1/6 lg:h-4/6 lg:px-4 flex items-center justify-center md:tracking-wider text-sm  lg:text-[16px] mt-4 text-center lg:text-center">
+      <p className="w-9/12 md:w-8/12 lg:w-4/12 h-1/6 lg:h-4/6 lg:px-4 flex items-center justify-center md:tracking-wider text-sm  lg:text-[16px] mt-4 text-center lg:text-center text-neutral-400">
         React, Typescript, Tailwind ve Firebase ile web projeleri
         geliştiriyorum. Sürekli öğrenerek kendimi geliştirmeyi ve bu alanda bir
         kariyer hedefliyorum.

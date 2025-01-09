@@ -60,16 +60,16 @@ const config = {
         },
         borderHover: {
           "0%": {
-            borderLeftColor: "#FFFFFF",
+            borderLeftColor: "#8b5cf6",
           },
           "35%": {
-            borderTopColor: "#FFFFFF",
+            borderTopColor: "#8b5cf6",
           },
           "70%": {
-            borderRightColor: "#FFFFFF",
+            borderRightColor: "#8b5cf6",
           },
           "100%": {
-            borderBottomColor: "#FFFFFF",
+            borderBottomColor: "#8b5cf6",
           },
         },
         scroll: {
