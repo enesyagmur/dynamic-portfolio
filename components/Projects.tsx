@@ -1,17 +1,8 @@
 "use client";
 import React, { ReactNode } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { TracingBeam } from "./ui/tracing-beam";
-import projectsOverwiev from "../data/projects-overwiev.json";
-import codeEditorImage from "../data/images/code-editor.png";
-import adamAsmacaImage from "../data/images/adam-asmaca.png";
-import youtubeCloneImage from "../data/images/yotube-clone.png";
-import mutfaktaNeVarImage from "../data/images/mutfakta-ne-var.png";
-import polyTranslateImage from "../data/images/poly-translate.png";
-import bisikletDunyamImage from "../data/images/bisiklet-dunyam.png";
-import dreamWorld from "../data/images/dream-world.png";
-import paraHarcama from "../data/images/para-harcama.png";
-import whatsappClone from "../data/images/whatsapp-clone.png";
+import projectsOverwiev from "../public/data/projects-overwiev.json";
 import { twMerge } from "tailwind-merge";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -33,18 +24,6 @@ interface Icons {
 }
 
 export function Projects() {
-  const images: StaticImageData[] = [
-    codeEditorImage,
-    mutfaktaNeVarImage,
-    adamAsmacaImage,
-    youtubeCloneImage,
-    polyTranslateImage,
-    bisikletDunyamImage,
-    whatsappClone,
-    paraHarcama,
-    dreamWorld,
-  ];
-
   const iconList: Icons[] = [
     { name: "css", component: <FaCss3Alt className="text-blue-400" /> },
     { name: "scss", component: <FaSass className="text-pink-500" /> },
@@ -73,13 +52,13 @@ export function Projects() {
 
   return (
     <>
-      <TracingBeam className="px-6">
+      <TracingBeam className="px-6 ">
         <ProjectsTitle />
         <div className="max-w-2xl mx-auto antialiased pt-4 relative">
           {projectsOverwiev.map((item, index) => (
             <div
               key={`content-${index}`}
-              className="mb-10 bg-neutral-900 p-4 rounded-xl"
+              className="mb-10 bg-neutral-900 p-4 rounded-xl hover:bg-neutral-800"
             >
               <div className="text-sm prose prose-sm dark:prose-invert">
                 <p
@@ -89,15 +68,15 @@ export function Projects() {
                 >
                   {item.name}
                 </p>
-                {images[index] && (
+                {
                   <Image
-                    src={images[index]}
-                    alt="blog thumbnail"
+                    src={item.image}
+                    alt="Proje Resmi"
                     height="1000"
                     width="1000"
                     className="rounded-lg mb-10 object-cover cursor-pointer"
                   />
-                )}
+                }
               </div>
 
               <div className="w-full h-[200px] md:h-[150px] flex flex-col items-center justify-evenly">

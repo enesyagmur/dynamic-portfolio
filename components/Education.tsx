@@ -16,17 +16,17 @@ const Education = () => {
     {
       title: "Balıkesir Üniversitesi",
       content:
-        "Bilgisayar Programcılığı : Üniversite eğitimimde hem tasarım hem de veri depolama için bazı temel dersler aldım.",
+        "Bilgisayar Programcılığı : Üniversite de bilgisayar programlama, veri tabanı yönetimi, nesneye dayalı programlama ve internet teknolojileri konularında bilgi sahibi. Bilgisayar ağ sistemleri, elektronik elemanlar ve devreler üzerine temel teknik bilgiye sahip. Görsel programlama ve internet programcılığı ile uygulama geliştirme konulurında temel seviyede bilgiler öğrendim.",
     },
     {
       title: "Anadolu Üniversitesi",
       content:
-        "Yönetim Bilişim Sistemleri : Burada yazılım ve işletmenin harman olduğu bir eğitim almaya devam ediyorum.",
+        "Yönetim Bilişim Sistemleri : İşletme yönetimi, üretim süreçleri, girişimcilik, yenilik yönetimi, müşteri ilişkileri, kullanıcı deneyimi tasarımı, sistem analizi,karar destek sistemleri, veri tabanı programlama, veri madenciliği, web ve ileri programlama, ağ yönetimi, bilgi güvenliği, sosyal ağ analizi konularında eğitim alarak başlangıç seviyesinde bilgi sahibi sahibi oldum.",
     },
   ];
 
   return (
-    <div className="w-full h-[800px] flex items-center justify-center py-16">
+    <div className="w-full  bg-neutral-900 flex items-center justify-center py-16">
       <Timeline data={newData} />
     </div>
   );

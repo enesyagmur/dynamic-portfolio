@@ -2,7 +2,7 @@ import React from "react";
 import { Spotlight } from "../components/ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Image from "next/image";
-import pp from "../data/images/transparan-profil.png";
+import pp from "../public/data/images/transparan-profil.png";
 
 const Hero = () => {
   return (

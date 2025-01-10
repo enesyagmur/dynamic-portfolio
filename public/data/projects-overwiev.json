@@ -1,0 +1,279 @@
+[
+  {
+    "id": "0",
+    "name": "Code Editor",
+    "used": ["tailwind", "typescript", "nextjs"],
+    "github": "https://github.com/enesyagmur/code-editor.git",
+    "live": "https://code-editor-liard-tau.vercel.app/",
+    "image": "/data/images/code-editor.png",
+    "video": "/data/videos/code-editor.mp4",
+    "description": {
+      "title": "🪧Code Editor ile birlikte Html Css ve Javascript kodlarınızı deneyebilirsiniz. Projeyi Typescript, Nextjs, Tailwind, kullanarak oluşturdum.",
+      "Features": [
+        "🔹Html, Css ve javascript kodlarını için tarayıcı görebi yapan bir ekran bulunuyor.",
+        "🔹Responsive tasarım bulunuyor."
+      ],
+      "technologies": [
+        "🔸Typescript",
+        "🔸Tailwind",
+        "🔸Nextjs",
+        "🔸React Icons",
+        "🔸React Hooks"
+      ]
+    }
+  },
+
+  {
+    "id": "1",
+    "name": "Mutfakta ne var?",
+    "used": ["typescript", "react", "tailwind", "firebase"],
+    "github": "https://github.com/enesyagmur/what-in-kitchen.git",
+    "live": "https://what-in-kitchen.vercel.app/",
+    "image": "/data/images/mutfakta-ne-var.png",
+    "video": "/data/videos/mutfakta-ne-var.mp4",
+    "description": {
+      "title": "🪧 `Mutfakta ne var?` isimli tarif bulma projesi. Typescript, React, Tailwind, Firebase ve GeminiAI kullandığım projemde, mutfağınızdaki malzemeleri girerek seçtiğiniz ( vegan, vejeteryan, sağlıklı... / tatlı, içecek, atıştırmalık...) türe uygun AI aracılığı ile tarifler bulabileceğiniz bir projedir. ",
+      "Features": [
+        "🔹Mail ile kullanıcı kayıt ve giriş özelliği bulunuyor.",
+        "🔹Tek seferlik misafir girişi özelliği bulunuyor.",
+        "🔹Google ile giriş ve kayıt özelliği bulunuyor.",
+        "🔹Github ile giriş ve kayıt özelliği bulunuyor.",
+        "🔹Şifre sıfırlama özelliği bulunuyor.",
+        "🔹Nasıl çalışır kısmı için ayrıca bir bölüm bulunuyor.",
+        "🔹Formik - Yup ile hata kontrolü ve React-Toast-Hot ile bilgilendirme özelliği bulunuyor.",
+        "🔹Malzeme listesi oluşturma ve oluşturulan listeyi gösterme özelliği bulunuyor.",
+        "🔹Kullanıcı isminin gösterimi ve çıkış özelliği bulunuyor.",
+        "🔹Geçersiz url için NotFound sayfası da bulunuyor ama deploy ettikten sonra vercel kendi 404 sayfasını göstermeye başladı.",
+        "🔹Responsive tasarım bulunuyor."
+      ],
+      "technologies": [
+        "🔸Typescript",
+        "🔸React",
+        "🔸Tailwind",
+        " 🔸Firebase",
+        " 🔸Gemini AI",
+        "🔸Axios",
+        "🔸Formik - Yup",
+        "🔸React Router Dom",
+        "🔸React Icons",
+        "🔸React Hooks",
+        "🔸React Redux"
+      ]
+    }
+  },
+  {
+    "id": "2",
+    "name": "Adam Asmaca",
+    "used": ["tailwind", "typescript", "react"],
+    "github": "https://github.com/enesyagmur/adam-asmaca.git",
+    "live": "https://hangman-tau-two.vercel.app/",
+    "image": "/data/images/adam-asmaca.png",
+    "video": "/data/videos/adam-asmaca.mp4",
+    "description": {
+      "title": "🪧 `Hangman` oyunu projesi. Typescript, React ve Tailwind kullandığım projem, 3 farklı zorluk seviyesinde, 2 farklı dilde oynayabileceğiniz bir adam asmaca oyunu. Veriler, müzikler ve görseller dahili olarak tutuluyor.",
+      "Features": [
+        "🔹Zorluk seçimi özelliği bulunuyor.",
+        "🔹Dil değiştirme özelliği bulunuyor.",
+        "🔹Müzik açma kapama özelliği bulunuyor.",
+        "🔹İpucu alma özelliği bulunuyor.",
+        "🔹Tahmin etme ve tahmine göre sonucun gösterimi özelliği bulunuyor.",
+        "🔹Tahmin edilen harflerin pasif olması özelliği bulunuyor.",
+        "🔹Hata sayısına göre tasarımın değişmesi, mesaj gösterim özelliği bulunuyor.",
+        "🔹Kazanma ya da kaybetme durumuna uygun müzik ile sonuç gösterimi özelliği bulunuyor.",
+        "🔹Responsive tasarım özelliği bulunuyor."
+      ],
+      "technologies": [
+        "🔸Typescript",
+        "🔸Tailwind",
+        "🔸React",
+        "🔸React Redux",
+        "🔸React Router Dom",
+        "🔸React Icons",
+        "🔸React Hooks"
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "name": "Yotube Clone",
+    "used": ["tailwind", "typescript", "react"],
+    "github": "https://github.com/enesyagmur/youtube-clone.git",
+    "live": "https://youtube-clone-git-main-enes-yagmurs-projects.vercel.app/",
+    "image": "/data/images/yotube-clone.png",
+    "video": "/data/videos/yotube-clone.mp4",
+    "description": {
+      "title": "`Youtube Clone` Bu projede Tailwind ve React kullanarak Youtube Api`ından çektiğim veriler ile bir clone projesi oluşturdum.",
+      "Features": [
+        "🔹Iframe ile video özellikleri",
+        "🔹Video istatistikleri ve yorumları",
+        "🔹Herhangi bir kelime ya da konu hakkında arama",
+        "🔹Belli kategoriler için videolar",
+        "🔹Canlı yayınlar",
+        "🔹 Shorts",
+        "🔹 Responsive Tasarım",
+        "🔹 Aydınlık ve karanlık mode",
+        "🔹 Bulunamayan aramalar için NotFound Sayfası",
+        "🔹 Kod tekrarını önlemek için Layout ve CustomRouter yapısı",
+        "🔹 Yüklenme aşaması için Loading Componenti",
+        "🔹Tailwind de ortak classlar ve custom boyutlar eklendi"
+      ],
+      "technologies": [
+        "🔸React",
+        "🔸Tailwind",
+        "🔸Youtube Data Api V3",
+        "🔸Axios",
+        "🔸React Redux",
+        "🔸React Router",
+        "🔸React Icons",
+        "🔸React Hooks"
+      ]
+    }
+  },
+
+  {
+    "id": "4",
+    "name": "Poly Translate",
+    "used": ["react", "tailwind"],
+    "github": "https://github.com/enesyagmur/poly-translate.git",
+    "live": "https://poly-translate.vercel.app/",
+    "image": "/data/images/poly-translate.png",
+    "video": "/data/videos/poly-translate.mp4",
+
+    "description": {
+      "title": "🪧 `PolyTranslate` isimli translate projesi. Bu projede Tailwind ve React kullanarak Mymemory Api`ile İngilizce, Türkçe, Çince ve Arapça dilleri için çeviri yapan bir proje oluşturdum. ",
+      "Features": [
+        "🔹Dört farklı dil için çeviri yapma özelliği bulunuyor.",
+        "🔹 Responsive Tasarım özelliği bulunuyor.",
+        "🔹Başlık için animasyon özelliği bulunuyor.",
+        "🔹Seçilen dilleri tersine çevirme özelliği bulunuyor.",
+        "🔹Sonucu kopyalama özelliği bulunuyor.",
+        "🔹Girilen inputu silme özelliği bulunuyor.",
+        "🔹Tailwind de custom renkler ve animasyonlar eklendi.",
+        "🔹 Hata gösterimi ve günlük sınır aşımı için hata componenti oluşturuldu. ",
+        "🔹 Verimlilik ve performans için Cursor Ide önerileri ile değişiklikler yapıldı ve UseCallback ve UseMemo kullanıldı."
+      ],
+      "technologies": [
+        "🔸React",
+        "🔸Tailwind",
+        "🔸Mymemory Api",
+        "🔸Axios",
+        "🔸Lodash Debounce",
+        "🔸React Hooks",
+        "🔸React Icons"
+      ]
+    }
+  },
+  {
+    "id": "5",
+    "name": "Bisiklet Dunyam",
+    "used": ["react", "css", "firebase"],
+    "github": "https://github.com/enesyagmur/bisiklet-dunyam.git",
+    "live": "https://bisiklet-dunyam.netlify.app/",
+    "image": "/data/images/bisiklet-dunyam.png",
+    "video": "/data/videos/bisiklet-dunyam.mp4",
+
+    "description": {
+      "title": "🪧`Bisiklet Dünyam` isimli projemde React, Firebase ve Css kullanarak oluşturduğum ilk kapsamlı özellikler barındıran alışveriş sitesi projem.",
+      "Features": [
+        "🔹Giriş, kayıt, çıkış ve şifre sıfırlama özellikleri bulunuyor.",
+        "🔹Kullanıcı profili bölümü ve bilgi güncelleme özelliği",
+        "🔹Favoriler bölümü, favoriye alma, çıkarma özellikleri mevcut.",
+        "🔹Sipariş oluşturma, iptal etme özelliği bulunuyor.",
+        "🔹Admin için sipariş durumu güncelleme, iptal etme, ürün ekleme, ürün güncelleme özellikleri mevcut.",
+        "🔹Tüm sayfalar ayrıca responsive olarak ayarlandı",
+        "🔹Not olarak: İlk defa bu kadar kapsamlı bir proje yaptığım için Clean code prensiplerine uyamadım ve performans açısından yeterli seviyede değil. Ayrıca içerisinde bölüm bölüm hatalar barındırıyor. "
+      ],
+      "technologies": [
+        "🔸React",
+        "🔸Css",
+        "🔸Firebase Auth",
+        "🔸Firebase Firestore",
+        "🔸Firebase Storage",
+        "🔸React-Hot-Toast",
+        "🔸React Redux",
+        "🔸React Hooks",
+        "🔸React Icons",
+        "🔸React Router Dom"
+      ]
+    }
+  },
+  {
+    "id": "6",
+    "name": "Whatsapp Web Clone",
+    "used": ["react", "scss", "firebase"],
+    "github": "https://github.com/enesyagmur/whatsapp-web-clone.git",
+    "live": "https://whatsapp-web-clone-sandy.vercel.app/",
+    "image": "/data/images/whatsapp-clone.png",
+    "video": "/data/videos/whatsapp-web.mp4",
+
+    "description": {
+      "title": "🪧`Whatsapp Web Clone` isimli projemde React, Firebase ve Scss kullanarak oluşturduğum whatsApp web özelliklerini barındıran bir clone projesidir.",
+      "Features": [
+        "🔹Giriş, kayıt, çıkış ve şifre sıfırlama özellikleri bulunuyor.",
+        "🔹Grup oluşturma, silme ve grup arama özelliği bulunuyor.",
+        "🔹Yazılı ve görsel olarak ileti gönderme özelliği mevcut.",
+        "🔹Firebase Realtime kullanarak yapılan değişikliklerin gerçek zamanlı yansıması özelliği mevcut",
+        "🔹Admin için sipariş durumu güncelleme, iptal etme, ürün ekleme, ürün güncelleme özellikleri mevcut.",
+        "🔹Tasarım responsive olarak ayarlandı",
+        "🔹Not olarak: Kullanıcı hesap özelleştirme, kişiler arası mesajlaşma ve gruplarda kişi mantığı bulunmuyor."
+      ],
+      "technologies": [
+        "🔸React",
+        "🔸Scss",
+        "🔸Firebase Auth",
+        "🔸Firebase Firestore",
+        "🔸Firebase Storage",
+        "🔸Firebase Realtime Database",
+        "🔸React Hooks",
+        "🔸React Icons",
+        "🔸React Router Dom"
+      ]
+    }
+  },
+  {
+    "id": "7",
+    "name": "Elon ın Parasını Harcama",
+    "used": ["react", "css"],
+    "github": "https://github.com/enesyagmur/para-harcama-app.git",
+    "live": "https://dancing-ganache-7a2bdb.netlify.app/",
+    "image": "/data/images/para-harcama.png",
+    "video": "/data/videos/para-harcama.mp4",
+    "description": {
+      "title": "🪧`Para Harcama` isimli projemde React ve Css bullanarak UseContext tekrarı için oluşturduğum bir para harcama projesidir.",
+      "Features": [
+        "🔹Sepete, ürün ekleme, çıkarma ve temizleme özellikleri mevcut",
+        "🔹Dinamik tutar gösterimi bulunuyor.",
+        "🔹Tasarım responsive olarak ayarlandı"
+      ],
+      "technologies": ["🔸React", "🔸Css", "🔸Use Context", "🔸React Hooks"]
+    }
+  },
+  {
+    "id": "8",
+    "name": "Dream World",
+    "used": ["javascript", "css"],
+    "github": "https://github.com/enesyagmur/Movie-App.git",
+    "live": "https://strong-pothos-e8d4f0.netlify.app/",
+    "image": "/data/images/dream-world.png",
+    "video": "/data/videos/dream-world.mp4",
+    "description": {
+      "title": "🪧`Dream World` isimli projemde Vanilla Javascript ve Css bullanarak Tmdb Api dan çektiğim veriler ile oluşturduğum bir Film ve Dizi projesidir.",
+      "Features": [
+        "🔹İçeri arama özelliği mevcut.",
+        "🔹İstenen içerik için detay sayfasını bulunuyor.",
+        "🔹Renk modu değiştirme özelliği mevcut",
+        "🔹Tasarım için dahili olarak eklenen videolar için kontroller bulunuyor.",
+        "🔹Tasarım responsive olarak ayarlandı"
+      ],
+      "technologies": [
+        "🔸Javascript",
+        "🔸Css",
+        "🔸Tmdb Api",
+        "🔸Fetch",
+        "🔸Dom",
+        "🔸Event Handling",
+        "🔸Dinamik Css"
+      ]
+    }
+  }
+]
