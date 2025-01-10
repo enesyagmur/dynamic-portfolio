@@ -108,7 +108,7 @@ export function Projects() {
                   </div>
 
                   <Link
-                    href={item.live}
+                    href={`/detail/${index}`}
                     className="w-4/12 h-full flex items-center justify-end  "
                     title="Detay Linki"
                   >
