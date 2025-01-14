@@ -2,9 +2,11 @@ import React from "react";
 import { Spotlight } from "../components/ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Image from "next/image";
-import pp from "../public/data/images/transparan-profil.png";
+import officalProfile from "../public/data/images/officalProfile.png";
+import casualProfile from "../public/data/images/casualProfile.png";
 
 const Hero = () => {
+  const randomProfile = Math.round(Math.random());
   return (
     <div className="w-full h-[700px] md:h-screen flex flex-col lg:flex-row items-center justify-between md:justify-center relative  overflow-hidden">
       {/* grid background */}
@@ -39,16 +41,26 @@ const Hero = () => {
       />
 
       <div className="w-[300px] h-[300px] flex flex-col items-center justify-center relative">
-        <div className="w-[250px] h-[250px] opacity-80  rounded-full bg-neutral-800 z-10 "></div>
-        <div className="w-[300px] h-[300px]  rounded-full bg-neutral-900 absolute"></div>
+        <div className="w-[250px] h-[250px] opacity-80  rounded-full bg-neutral-900 z-10 "></div>
+        <div className="w-[300px] h-[300px]  rounded-full bg-neutral-950 absolute"></div>
 
-        <Image
-          src={pp}
-          width={250}
-          height={250}
-          className="profile-image object-cover absolute z-20 ml-24 "
-          alt="Profil Resmi"
-        />
+        {randomProfile === 0 ? (
+          <Image
+            src={officalProfile}
+            width={300}
+            height={300}
+            className="profile-image object-cover absolute z-20 ml-28 scale-110"
+            alt="Profil Resmi"
+          />
+        ) : (
+          <Image
+            src={casualProfile}
+            width={300}
+            height={300}
+            className="profile-image object-cover absolute z-20"
+            alt="Profil Resmi"
+          />
+        )}
 
         <button className="w-[120px] h-[40px] lg:w-[180px] lg:h-[50px] rounded-xl bg-highBlack border-[2px] border-neutral-600 absolute -bottom-16 md:-bottom-44 z-50  hover:animate-borderHover">
           İletişim

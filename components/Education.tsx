@@ -26,7 +26,7 @@ const Education = () => {
   ];
 
   return (
-    <div className="w-full  bg-neutral-900 flex items-center justify-center py-16">
+    <div className="w-full  bg-neutral-900 flex items-center justify-center py-16 rounded-lg">
       <Timeline data={newData} />
     </div>
   );
