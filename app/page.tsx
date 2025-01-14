@@ -15,5 +15,3 @@ export default function Home() {
     </div>
   );
 }
-
-// eğitim ve iletişim alanını responsive yapıyorum
