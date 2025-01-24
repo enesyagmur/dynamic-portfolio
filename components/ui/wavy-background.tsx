@@ -14,7 +14,7 @@ export const WavyBackground = ({
   waveOpacity = 0.5,
   ...props
 }: {
-  children?: any;
+  children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
   waveWidth?: number;
@@ -25,14 +25,11 @@ export const WavyBackground = ({
   [key: string]: any;
 }) => {
   const noise = createNoise3D();
-  let w: number,
-    h: number,
-    nt: number,
-    i: number,
-    x: number,
-    ctx: any,
-    canvas: any;
+  let w: number, h: number, nt: number, i: number, x: number;
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isSafari, setIsSafari] = useState(false);
+  let animationId: number;
+
   const getSpeed = () => {
     switch (speed) {
       case "slow":
@@ -45,22 +42,29 @@ export const WavyBackground = ({
   };
 
   const init = () => {
-    canvas = canvasRef.current;
-    ctx = canvas.getContext("2d");
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext("2d");
+    if (!ctx || !canvas) return;
+
     w = ctx.canvas.width = window.innerWidth;
     h = ctx.canvas.height = window.innerHeight;
     ctx.filter = `blur(${blur}px)`;
     nt = 0;
-    window.onresize = function () {
+    window.onresize = () => {
       w = ctx.canvas.width = window.innerWidth;
       h = ctx.canvas.height = window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
     };
-    render();
+    render(ctx, w, h);
   };
 
   const waveColors = ["#3b82f6", "#6366f1", "#737373", "#8b5cf6", "#a855f7"];
-  const drawWave = (n: number) => {
+  const drawWave = (
+    ctx: CanvasRenderingContext2D,
+    n: number,
+    w: number,
+    h: number
+  ) => {
     nt += getSpeed();
     for (i = 0; i < n; i++) {
       ctx.beginPath();
@@ -75,25 +79,23 @@ export const WavyBackground = ({
     }
   };
 
-  let animationId: number;
-  const render = () => {
+  const render = (ctx: CanvasRenderingContext2D, w: number, h: number) => {
     ctx.fillStyle = backgroundFill || "black";
     ctx.globalAlpha = waveOpacity || 0.5;
     ctx.fillRect(0, 0, w, h);
-    drawWave(5);
-    animationId = requestAnimationFrame(render);
+    drawWave(ctx, 5, w, h);
+    animationId = requestAnimationFrame(() => render(ctx, w, h));
   };
 
   useEffect(() => {
     init();
     return () => {
-      cancelAnimationFrame(animationId);
+      cancelAnimationFrame(animationId); // Use animationId from the outer scope
     };
   }, []);
 
-  const [isSafari, setIsSafari] = useState(false);
   useEffect(() => {
-    // I'm sorry but i have got to support it on safari.
+    // Safari tarayıcısını kontrol et
     setIsSafari(
       typeof window !== "undefined" &&
         navigator.userAgent.includes("Safari") &&

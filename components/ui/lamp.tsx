@@ -101,7 +101,7 @@ export const LampContainer = () => {
             işimden arta kalan zamanlarda yazılım öğrenmeye ve İngilizcemi
             geliştirmeye başladım. Frontend geliştirme ile başladığım bu
             yolculukta HTML ve CSS ile temel projeler geliştirdikten sonra,
-            JavaScript'e odaklandım. JavaScript’i derinlemesine öğrenmek ve
+            JavaScripte odaklandım. JavaScript’i derinlemesine öğrenmek ve
             kendimi bu alanda geliştirmek için çok zaman harcadım. Ardından,
             React framework’üne geçtim ve React ile birçok proje geliştirerek
             kendimi bu alanda da ileri taşıdım. CSS konusunda da SASS ve
