@@ -1,46 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
 const FormContact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [status, setStatus] = useState<string | null>(null);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus(null);
-    const response = await fetch("/api/sendEmail.ts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const result = await response.json();
-    if (result.success) {
-      setStatus("E-posta gönderildi");
-    } else {
-      setStatus("E-posta gönderilemedi X");
-    }
-  };
+  const formLink: string = `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_ID}`;
 
   return (
     <form
       className="w-full h-4/6 md:w-10/12 lg:w-8/12 md:h-full flex flex-col items-center md:items-start justify-evenly md:justify-between text-black"
-      action=""
-      onSubmit={handleSubmit}
+      action={formLink}
+      method="POST"
     >
       <div className="w-11/12 h-[50px] flex items-center justify-between">
         <input
@@ -48,16 +16,12 @@ const FormContact = () => {
           className="w-4/12 h-full bg-white pl-2 rounded-lg"
           placeholder="İsim:"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
         />
         <input
           type="email"
           className="w-7/12 h-full bg-white pl-2 rounded-lg"
           placeholder="Email:"
           name="email"
-          value={formData.email}
-          onChange={handleChange}
         />
       </div>
       <input
@@ -65,17 +29,13 @@ const FormContact = () => {
         className="w-11/12 h-[50px] bg-white pl-2 rounded-lg"
         placeholder="Konu:"
         name="subject"
-        value={formData.subject}
-        onChange={handleChange}
       />
       <textarea
         className="w-11/12 bg-white p-2 rounded-lg"
         placeholder="Mesaj:"
         id=""
-        rows={5}
+        rows={4}
         name="message"
-        value={formData.message}
-        onChange={handleChange}
       ></textarea>
       <button
         type="submit"
