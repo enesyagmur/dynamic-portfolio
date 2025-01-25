@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import projectsData from "../../../public/data/projects-overwiev.json";
 
 interface DetailParams {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 interface DetailProject {
@@ -23,11 +23,22 @@ interface DetailProject {
 }
 
 const Detail: React.FC<DetailParams> = ({ params }) => {
-  const proje: DetailProject | undefined = projectsData.find(
-    (item) => item.id === params.id
-  );
+  const [project, setProject] = useState<DetailProject | undefined>(undefined);
 
-  if (!proje) {
+  const fetchParams = async () => {
+    const resolveParams = await params;
+    const foundProject = projectsData.find(
+      (item) => item.id === resolveParams.id
+    );
+
+    setProject(foundProject);
+  };
+
+  useEffect(() => {
+    fetchParams();
+  }, [params]);
+
+  if (!project) {
     return (
       <div className="w-full h-screen flex items-center justify-center bg-highBlack text-white text-3xl">
         Proje bulunamadı!
@@ -36,11 +47,11 @@ const Detail: React.FC<DetailParams> = ({ params }) => {
   }
   return (
     <div className="w-11/12 h-screen flex flex-col items-center justify-evenly text-white pt-8">
-      {proje && (
+      {project && (
         <>
           <div className="w-full p-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg">
             <video
-              src={proje.video}
+              src={project.video}
               className="w-full rounded-lg  z-10"
               controls
             />
@@ -49,13 +60,15 @@ const Detail: React.FC<DetailParams> = ({ params }) => {
           <div className="w-full flex flex-col items-center justify-center">
             <div className="w-full flex flex-col my-4">
               <p className="text-xl font-bold m-2">Açıklama</p>
-              <p className="p-2 text-neutral-300">{proje.description.title}</p>
+              <p className="p-2 text-neutral-300">
+                {project.description.title}
+              </p>
             </div>
 
             <div className="w-full flex md:flex-row flex-col">
               <div className="w-full md:w-6/12 flex flex-col my-4">
                 <p className="text-xl font-bold m-2">Özellikler</p>
-                {proje.description.Features.map((item, index) => (
+                {project.description.Features.map((item, index) => (
                   <p className="text-neutral-300 flex" key={index}>
                     {item}
                   </p>
@@ -64,7 +77,7 @@ const Detail: React.FC<DetailParams> = ({ params }) => {
 
               <div className="w-full md:w-6/12 flex flex-col my-4">
                 <p className="text-xl font-bold m-2">Teknolojiler</p>
-                {proje.description.technologies.map((item, index) => (
+                {project.description.technologies.map((item, index) => (
                   <p className="text-neutral-300 ml-2" key={index}>
                     {item}
                   </p>
