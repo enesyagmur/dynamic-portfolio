@@ -1,6 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
@@ -22,15 +22,13 @@ export const WavyBackground = ({
   blur?: number;
   speed?: "slow" | "fast";
   waveOpacity?: number;
-  [key: string]: any;
-}) => {
+} & React.ComponentPropsWithoutRef<"div">) => {
   const noise = createNoise3D();
-  let w: number, h: number, nt: number, i: number, x: number;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isSafari, setIsSafari] = useState(false);
-  let animationId: number;
+  const animationIdRef = useRef<number>(0);
 
-  const getSpeed = () => {
+  const getSpeed = useCallback(() => {
     switch (speed) {
       case "slow":
         return 0.001;
@@ -39,63 +37,80 @@ export const WavyBackground = ({
       default:
         return 0.001;
     }
-  };
+  }, [speed]);
 
-  const init = () => {
+  const drawWave = useCallback(
+    (
+      ctx: CanvasRenderingContext2D,
+      n: number,
+      w: number,
+      h: number,
+      nt: number
+    ) => {
+      const waveColors = [
+        "#3b82f6",
+        "#6366f1",
+        "#737373",
+        "#8b5cf6",
+        "#a855f7",
+      ];
+      for (let i = 0; i < n; i++) {
+        ctx.beginPath();
+        ctx.lineWidth = waveWidth || 50;
+        ctx.strokeStyle = waveColors[i % waveColors.length];
+        for (let x = 0; x < w; x += 5) {
+          const y = noise(x / 800, 0.3 * i, nt) * 100;
+          ctx.lineTo(x, y + h * 0.5);
+        }
+        ctx.stroke();
+        ctx.closePath();
+      }
+    },
+    [noise, waveWidth]
+  );
+
+  const render = useCallback(
+    (ctx: CanvasRenderingContext2D, w: number, h: number, nt: number) => {
+      ctx.fillStyle = backgroundFill || "black";
+      ctx.globalAlpha = waveOpacity || 0.5;
+      ctx.fillRect(0, 0, w, h);
+      drawWave(ctx, 5, w, h, nt);
+      animationIdRef.current = requestAnimationFrame(() =>
+        render(ctx, w, h, nt + getSpeed())
+      );
+    },
+    [backgroundFill, waveOpacity, drawWave, getSpeed]
+  );
+
+  const init = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!ctx || !canvas) return;
 
-    w = ctx.canvas.width = window.innerWidth;
-    h = ctx.canvas.height = window.innerHeight;
+    const w = (ctx.canvas.width = window.innerWidth);
+    const h = (ctx.canvas.height = window.innerHeight);
     ctx.filter = `blur(${blur}px)`;
-    nt = 0;
+    const nt = 0;
+
     window.onresize = () => {
-      w = ctx.canvas.width = window.innerWidth;
-      h = ctx.canvas.height = window.innerHeight;
+      ctx.canvas.width = window.innerWidth;
+      ctx.canvas.height = window.innerHeight;
       ctx.filter = `blur(${blur}px)`;
     };
-    render(ctx, w, h);
-  };
 
-  const waveColors = ["#3b82f6", "#6366f1", "#737373", "#8b5cf6", "#a855f7"];
-  const drawWave = (
-    ctx: CanvasRenderingContext2D,
-    n: number,
-    w: number,
-    h: number
-  ) => {
-    nt += getSpeed();
-    for (i = 0; i < n; i++) {
-      ctx.beginPath();
-      ctx.lineWidth = waveWidth || 50;
-      ctx.strokeStyle = waveColors[i % waveColors.length];
-      for (x = 0; x < w; x += 5) {
-        const y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
-      }
-      ctx.stroke();
-      ctx.closePath();
-    }
-  };
-
-  const render = (ctx: CanvasRenderingContext2D, w: number, h: number) => {
-    ctx.fillStyle = backgroundFill || "black";
-    ctx.globalAlpha = waveOpacity || 0.5;
-    ctx.fillRect(0, 0, w, h);
-    drawWave(ctx, 5, w, h);
-    animationId = requestAnimationFrame(() => render(ctx, w, h));
-  };
+    render(ctx, w, h, nt);
+  }, [blur, render]);
 
   useEffect(() => {
     init();
     return () => {
-      cancelAnimationFrame(animationId); // Use animationId from the outer scope
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current);
+      }
     };
-  }, []);
+  }, [init]);
 
   useEffect(() => {
-    // Safari tarayıcısını kontrol et
     setIsSafari(
       typeof window !== "undefined" &&
         navigator.userAgent.includes("Safari") &&
