@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import projectsData from "../../../public/data/projects-overwiev.json";
 
