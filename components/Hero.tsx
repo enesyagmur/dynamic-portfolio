@@ -5,7 +5,11 @@ import Image from "next/image";
 import officalProfile from "../public/data/images/officalProfile.png";
 import casualProfile from "../public/data/images/casualProfile.png";
 
-const Hero = () => {
+interface HeroProps {
+  scrollToContact: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ scrollToContact }) => {
   const randomProfile = Math.round(Math.random());
   return (
     <div className="w-full h-[700px] md:h-screen flex flex-col lg:flex-row items-center justify-between md:justify-center relative  overflow-hidden">
@@ -62,7 +66,10 @@ const Hero = () => {
           />
         )}
 
-        <button className="w-[120px] h-[40px] lg:w-[180px] lg:h-[50px] rounded-xl bg-highBlack border-[2px] border-neutral-600 absolute -bottom-16 md:-bottom-44 z-50  hover:animate-borderHover">
+        <button
+          onClick={scrollToContact}
+          className="w-[120px] h-[40px] lg:w-[180px] lg:h-[50px] rounded-xl bg-highBlack border-[2px] border-neutral-600 absolute -bottom-16 md:-bottom-44 z-50  hover:animate-borderHover"
+        >
           İletişim
         </button>
       </div>

@@ -1,13 +1,20 @@
-import React from "react";
+import React, { RefObject } from "react";
 import { WavyBackground } from "./ui/wavy-background";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareGithub } from "react-icons/fa6";
 import Link from "next/link";
 import FormContact from "./FormContact";
 
-const Contact = () => {
+interface ContactProps {
+  reference: RefObject<HTMLDivElement | null>;
+}
+
+const Contact: React.FC<ContactProps> = ({ reference }) => {
   return (
-    <div className="w-full h-[800px]  flex items-center justify-center relative overflow-hidden md:mt-8">
+    <div
+      ref={reference}
+      className="w-full h-[800px]  flex items-center justify-center relative overflow-hidden md:mt-8"
+    >
       <WavyBackground />
       <div className="w-full h-full  md:w-10/12 lg:w-8/12 md:h-5/6   lg:h-3/6  flex flex-col-reverse md:flex-row items-center justify-center rounded-lg z-10 ">
         <FormContact />
