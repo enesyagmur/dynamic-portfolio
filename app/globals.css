@@ -17,3 +17,23 @@ body {
 .profile-image {
   mask-image: linear-gradient(black 1%, transparent 99%);
 }
+
+
+body::-webkit-scrollbar {
+  width: 16px; /
+}
+
+body::-webkit-scrollbar-track {
+  background: #171717; 
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #5d0ec0; 
+  border-radius: 6px; 
+  border: 1px solid #404040; 
+  cursor: pointer;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #4f39f6; 
+}

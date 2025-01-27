@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Spotlight } from "../components/ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Image from "next/image";
@@ -10,7 +10,10 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ scrollToContact }) => {
-  const randomProfile = Math.round(Math.random());
+  const [randomProfile, setRandomProfile] = useState<number>();
+  useEffect(() => {
+    setRandomProfile(Math.round(Math.random()));
+  }, []);
   return (
     <div className="w-full h-[700px] md:h-screen flex flex-col lg:flex-row items-center justify-between md:justify-center relative  overflow-hidden">
       {/* grid background */}
