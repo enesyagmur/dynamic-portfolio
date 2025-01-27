@@ -98,7 +98,7 @@
     "name": "Yotube Clone",
     "used": ["tailwind", "typescript", "react"],
     "github": "https://github.com/enesyagmur/youtube-clone.git",
-    "live": "https://youtube-clone-git-main-enes-yagmurs-projects.vercel.app/",
+    "live": "https://enesyagmur-youtubeclone.netlify.app/",
     "image": "/data/images/yotube-clone.png",
     "video": "/data/videos/yotube-clone.mp4",
     "description": {
@@ -168,7 +168,7 @@
     "name": "Bisiklet Dunyam",
     "used": ["react", "css", "firebase"],
     "github": "https://github.com/enesyagmur/bisiklet-dunyam.git",
-    "live": "https://bisiklet-dunyam.netlify.app/",
+    "live": "https://enesyagmur-bisikletdunyam.netlify.app/",
     "image": "/data/images/bisiklet-dunyam.png",
     "video": "/data/videos/bisiklet-dunyam.mp4",
 
@@ -202,7 +202,7 @@
     "name": "Whatsapp Web Clone",
     "used": ["react", "scss", "firebase"],
     "github": "https://github.com/enesyagmur/whatsapp-web-clone.git",
-    "live": "https://whatsapp-web-clone-sandy.vercel.app/",
+    "live": "https://regal-scone-187027.netlify.app/",
     "image": "/data/images/whatsapp-clone.png",
     "video": "/data/videos/whatsapp-web.mp4",
 
@@ -253,7 +253,7 @@
     "name": "Dream World",
     "used": ["javascript", "css"],
     "github": "https://github.com/enesyagmur/Movie-App.git",
-    "live": "https://strong-pothos-e8d4f0.netlify.app/",
+    "live": "https://enesyagmur-dreamworld.netlify.app/",
     "image": "/data/images/dream-world.png",
     "video": "/data/videos/dream-world.mp4",
     "description": {
