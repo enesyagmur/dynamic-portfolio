@@ -41,7 +41,7 @@ const FormContact = () => {
     <form
       onSubmit={handleSubmit}
       key={key}
-      className="w-full h-4/6 md:w-10/12 lg:w-8/12 md:h-full flex flex-col items-center md:items-start justify-evenly md:justify-between text-black"
+      className="w-full h-4/6 lg:w-8/12 lg:h-full flex flex-col items-center lg:items-start justify-evenly lg:justify-between text-black"
     >
       <div className="w-11/12 h-[50px] flex items-center justify-between">
         <input

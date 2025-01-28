@@ -21,12 +21,12 @@ const Education = () => {
     {
       title: "Anadolu Üniversitesi Açıköğretim (devam ediyor)",
       content:
-        "Yönetim Bilişim Sistemleri : Aktif olarak devam eden bu bölümde, yazılımın yanında İşletme yönetimi, üretim süreçleri, girişimcilik, yenilik yönetimi, müşteri ilişkileri, gibi daha önce üniversitede ve lisede karşılaşmadığım farklı alanlarda temel seviyede bilgi sahibi olma fırsatı buldum.",
+        "Yönetim Bilişim Sistemleri : Aktif olarak devam eden bu bölümde, yazılımın yanında İşletme yönetimi, girişimcilik, müşteri ilişkileri, gibi daha önce karşılaşmadığım farklı alanlarda temel seviyede bilgi sahibi olma fırsatı buldum.",
     },
   ];
 
   return (
-    <div className="w-ful bg-neutral-900 flex items-center justify-center py-16 rounded-lg z-20">
+    <div className="w-full bg-neutral-900 flex items-center justify-center py-16 rounded-lg z-20">
       <Timeline data={newData} />
     </div>
   );
