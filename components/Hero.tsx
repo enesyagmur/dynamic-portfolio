@@ -12,8 +12,9 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ scrollToContact }) => {
   const [randomProfile, setRandomProfile] = useState<number>();
   useEffect(() => {
-    setRandomProfile(Math.round(Math.random()));
+    setRandomProfile(Math.round(Math.random() * 3));
   }, []);
+
   return (
     <div className="w-full h-[700px] md:h-screen flex flex-col lg:flex-row items-center justify-between md:justify-center relative  overflow-hidden">
       {/* grid background */}
