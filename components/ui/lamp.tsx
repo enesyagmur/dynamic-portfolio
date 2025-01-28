@@ -90,7 +90,7 @@ export const LampContainer = () => {
           }}
           className="w-11/12 lg:w-8/12  flex flex-col items-center justify-evenly pt-[300px]"
         >
-          <h1 className="md:text-5xl text-3xl  font-bold">HAKKIMDA</h1>
+          <h1 className="md:text-5xl text-3xl">HAKKIMDA</h1>
           <p className="text-sm lg:text-[16px] lg:leading-6 mt-16 md:mt-12 text-neutral-400">
             Merhaba! Ben 3 Şubat 1999 doğumluyum ve İstanbul’da yaşıyorum.
             Yazılım serüvenim, lise yıllarında web tasarım bölümü ile başladı ve

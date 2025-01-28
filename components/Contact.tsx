@@ -13,7 +13,7 @@ const Contact: React.FC<ContactProps> = ({ reference }) => {
   return (
     <div
       ref={reference}
-      className="w-full h-[800px] flex items-center justify-center relative overflow-hidden md:mt-8"
+      className="w-full h-screen flex items-center justify-center relative overflow-hidden md:mt-8"
     >
       <WavyBackground />
       <div className="w-full h-full lg:w-8/12 lg:h-3/6  flex flex-col-reverse lg:flex-row items-center justify-center rounded-lg z-10 ">
