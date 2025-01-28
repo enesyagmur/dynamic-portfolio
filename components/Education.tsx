@@ -11,17 +11,17 @@ const Education = () => {
     {
       title: "İsmet Aktar Mesleki Teknik Anadolu Lisesi",
       content:
-        "Web Tasarım : Yazılım ile tanışmam lisede gerçekleşti ve burada bilgisayar bileşenlerinin temelini ve algoritma mantığını öğrendim.",
+        "Web Tasarım : Yazılım ile tanışmam lisede gerçekleşti, burada bilgisayar bileşenlerinin temelini, çalışma mantığını, yazılımın hangi alanlarda nasıl kullanıldığına dair örnekler ile çoğunlukla işin teorik kısmı ve giriş seviyesinde algoritma mantığı ile kodlama hakkında bilgi edinme fırsatı buldum.",
     },
     {
       title: "Balıkesir Üniversitesi",
       content:
-        "Bilgisayar Programcılığı : Üniversite de bilgisayar programlama, veri tabanı yönetimi, nesneye dayalı programlama ve internet teknolojileri konularında bilgi sahibi. Bilgisayar ağ sistemleri, elektronik elemanlar ve devreler üzerine temel teknik bilgiye sahip. Görsel programlama ve internet programcılığı ile uygulama geliştirme konulurında temel seviyede bilgiler öğrendim.",
+        "Bilgisayar Programcılığı : Üniversite de tasarım, veri tabanı sistemleri ve internet programcılığı gibi farklı alanlarda yine temel seviye bilgi sahibi olarak basit uygulamalar geliştirme imkanı buldum.",
     },
     {
-      title: "Anadolu Üniversitesi",
+      title: "Anadolu Üniversitesi Açıköğretim (devam ediyor)",
       content:
-        "Yönetim Bilişim Sistemleri : İşletme yönetimi, üretim süreçleri, girişimcilik, yenilik yönetimi, müşteri ilişkileri, kullanıcı deneyimi tasarımı, sistem analizi,karar destek sistemleri, veri tabanı programlama, veri madenciliği, web ve ileri programlama, ağ yönetimi, bilgi güvenliği, sosyal ağ analizi konularında eğitim alarak başlangıç seviyesinde bilgi sahibi sahibi oldum.",
+        "Yönetim Bilişim Sistemleri : Aktif olarak devam eden bu bölümde, yazılımın yanında İşletme yönetimi, üretim süreçleri, girişimcilik, yenilik yönetimi, müşteri ilişkileri, gibi daha önce üniversitede ve lisede karşılaşmadığım farklı alanlarda temel seviyede bilgi sahibi olma fırsatı buldum.",
     },
   ];
 
