@@ -10,15 +10,15 @@
     "description": {
       "title": "🪧Code Editor ile birlikte Html Css ve Javascript kodlarınızı deneyebilirsiniz. Projeyi Typescript, Nextjs, Tailwind, kullanarak oluşturdum.",
       "Features": [
-        "🔹Html, Css ve javascript kodlarını için tarayıcı görebi yapan bir ekran bulunuyor.",
-        "🔹Responsive tasarım bulunuyor."
+        "🟦 Html, Css ve javascript kodlarını için tarayıcı görebi yapan bir ekran bulunuyor.",
+        "🟦 Responsive tasarım bulunuyor."
       ],
       "technologies": [
-        "🔸Typescript",
-        "🔸Tailwind",
-        "🔸Nextjs",
-        "🔸React Icons",
-        "🔸React Hooks"
+        "🟣 Typescript",
+        "🟣 Tailwind",
+        "🟣 Nextjs",
+        "🟣 React Icons",
+        "🟣 React Hooks"
       ]
     }
   },
@@ -34,30 +34,30 @@
     "description": {
       "title": "🪧 `Mutfakta ne var?` isimli tarif bulma projesi. Typescript, React, Tailwind, Firebase ve GeminiAI kullandığım projemde, mutfağınızdaki malzemeleri girerek seçtiğiniz ( vegan, vejeteryan, sağlıklı... / tatlı, içecek, atıştırmalık...) türe uygun AI aracılığı ile tarifler bulabileceğiniz bir projedir. ",
       "Features": [
-        "🔹Mail ile kullanıcı kayıt ve giriş özelliği bulunuyor.",
-        "🔹Tek seferlik misafir girişi özelliği bulunuyor.",
-        "🔹Google ile giriş ve kayıt özelliği bulunuyor.",
-        "🔹Github ile giriş ve kayıt özelliği bulunuyor.",
-        "🔹Şifre sıfırlama özelliği bulunuyor.",
-        "🔹Nasıl çalışır kısmı için ayrıca bir bölüm bulunuyor.",
-        "🔹Formik - Yup ile hata kontrolü ve React-Toast-Hot ile bilgilendirme özelliği bulunuyor.",
-        "🔹Malzeme listesi oluşturma ve oluşturulan listeyi gösterme özelliği bulunuyor.",
-        "🔹Kullanıcı isminin gösterimi ve çıkış özelliği bulunuyor.",
-        "🔹Geçersiz url için NotFound sayfası da bulunuyor ama deploy ettikten sonra vercel kendi 404 sayfasını göstermeye başladı.",
-        "🔹Responsive tasarım bulunuyor."
+        "🟦 Mail ile kullanıcı kayıt ve giriş özelliği bulunuyor.",
+        "🟦 Tek seferlik misafir girişi özelliği bulunuyor.",
+        "🟦 Google ile giriş ve kayıt özelliği bulunuyor.",
+        "🟦 Github ile giriş ve kayıt özelliği bulunuyor.",
+        "🟦 Şifre sıfırlama özelliği bulunuyor.",
+        "🟦 Nasıl çalışır kısmı için ayrıca bir bölüm bulunuyor.",
+        "🟦 Formik - Yup ile hata kontrolü ve React-Toast-Hot ile bilgilendirme özelliği bulunuyor.",
+        "🟦 Malzeme listesi oluşturma ve oluşturulan listeyi gösterme özelliği bulunuyor.",
+        "🟦 Kullanıcı isminin gösterimi ve çıkış özelliği bulunuyor.",
+        "🟦 Geçersiz url için NotFound sayfası da bulunuyor ama deploy ettikten sonra vercel kendi 404 sayfasını göstermeye başladı.",
+        "🟦 Responsive tasarım bulunuyor."
       ],
       "technologies": [
-        "🔸Typescript",
-        "🔸React",
-        "🔸Tailwind",
-        " 🔸Firebase",
-        " 🔸Gemini AI",
-        "🔸Axios",
-        "🔸Formik - Yup",
-        "🔸React Router Dom",
-        "🔸React Icons",
-        "🔸React Hooks",
-        "🔸React Redux"
+        "🟣 Typescript",
+        "🟣 React",
+        "🟣 Tailwind",
+        "🟣 Firebase",
+        "🟣 Gemini AI",
+        "🟣 Axios",
+        "🟣 Formik - Yup",
+        "🟣 React Router Dom",
+        "🟣 React Icons",
+        "🟣 React Hooks",
+        "🟣 React Redux"
       ]
     }
   },
@@ -72,24 +72,24 @@
     "description": {
       "title": "🪧 `Hangman` oyunu projesi. Typescript, React ve Tailwind kullandığım projem, 3 farklı zorluk seviyesinde, 2 farklı dilde oynayabileceğiniz bir adam asmaca oyunu. Veriler, müzikler ve görseller dahili olarak tutuluyor.",
       "Features": [
-        "🔹Zorluk seçimi özelliği bulunuyor.",
-        "🔹Dil değiştirme özelliği bulunuyor.",
-        "🔹Müzik açma kapama özelliği bulunuyor.",
-        "🔹İpucu alma özelliği bulunuyor.",
-        "🔹Tahmin etme ve tahmine göre sonucun gösterimi özelliği bulunuyor.",
-        "🔹Tahmin edilen harflerin pasif olması özelliği bulunuyor.",
-        "🔹Hata sayısına göre tasarımın değişmesi, mesaj gösterim özelliği bulunuyor.",
-        "🔹Kazanma ya da kaybetme durumuna uygun müzik ile sonuç gösterimi özelliği bulunuyor.",
-        "🔹Responsive tasarım özelliği bulunuyor."
+        "🟦 Zorluk seçimi özelliği bulunuyor.",
+        "🟦 Dil değiştirme özelliği bulunuyor.",
+        "🟦 Müzik açma kapama özelliği bulunuyor.",
+        "🟦 İpucu alma özelliği bulunuyor.",
+        "🟦 Tahmin etme ve tahmine göre sonucun gösterimi özelliği bulunuyor.",
+        "🟦 Tahmin edilen harflerin pasif olması özelliği bulunuyor.",
+        "🟦 Hata sayısına göre tasarımın değişmesi, mesaj gösterim özelliği bulunuyor.",
+        "🟦 Kazanma ya da kaybetme durumuna uygun müzik ile sonuç gösterimi özelliği bulunuyor.",
+        "🟦 Responsive tasarım özelliği bulunuyor."
       ],
       "technologies": [
-        "🔸Typescript",
-        "🔸Tailwind",
-        "🔸React",
-        "🔸React Redux",
-        "🔸React Router Dom",
-        "🔸React Icons",
-        "🔸React Hooks"
+        "🟣 Typescript",
+        "🟣 Tailwind",
+        "🟣 React",
+        "🟣 React Redux",
+        "🟣 React Router Dom",
+        "🟣 React Icons",
+        "🟣 React Hooks"
       ]
     }
   },
@@ -104,28 +104,28 @@
     "description": {
       "title": "`Youtube Clone` Bu projede Tailwind ve React kullanarak Youtube Api`ından çektiğim veriler ile bir clone projesi oluşturdum.",
       "Features": [
-        "🔹Iframe ile video özellikleri",
-        "🔹Video istatistikleri ve yorumları",
-        "🔹Herhangi bir kelime ya da konu hakkında arama",
-        "🔹Belli kategoriler için videolar",
-        "🔹Canlı yayınlar",
-        "🔹 Shorts",
-        "🔹 Responsive Tasarım",
-        "🔹 Aydınlık ve karanlık mode",
-        "🔹 Bulunamayan aramalar için NotFound Sayfası",
-        "🔹 Kod tekrarını önlemek için Layout ve CustomRouter yapısı",
-        "🔹 Yüklenme aşaması için Loading Componenti",
-        "🔹Tailwind de ortak classlar ve custom boyutlar eklendi"
+        "🟦 Iframe ile video özellikleri",
+        "🟦 Video istatistikleri ve yorumları",
+        "🟦 Herhangi bir kelime ya da konu hakkında arama",
+        "🟦 Belli kategoriler için videolar",
+        "🟦 Canlı yayınlar",
+        "🟦 Shorts",
+        "🟦 Responsive Tasarım",
+        "🟦 Aydınlık ve karanlık mode",
+        "🟦 Bulunamayan aramalar için NotFound Sayfası",
+        "🟦 Kod tekrarını önlemek için Layout ve CustomRouter yapısı",
+        "🟦 Yüklenme aşaması için Loading Componenti",
+        "🟦 Tailwind de ortak classlar ve custom boyutlar eklendi"
       ],
       "technologies": [
-        "🔸React",
-        "🔸Tailwind",
-        "🔸Youtube Data Api V3",
-        "🔸Axios",
-        "🔸React Redux",
-        "🔸React Router",
-        "🔸React Icons",
-        "🔸React Hooks"
+        "🟣 React",
+        "🟣 Tailwind",
+        "🟣 Youtube Data Api V3",
+        "🟣 Axios",
+        "🟣 React Redux",
+        "🟣 React Router",
+        "🟣 React Icons",
+        "🟣 React Hooks"
       ]
     }
   },
@@ -142,24 +142,24 @@
     "description": {
       "title": "🪧 `PolyTranslate` isimli translate projesi. Bu projede Tailwind ve React kullanarak Mymemory Api`ile İngilizce, Türkçe, Çince ve Arapça dilleri için çeviri yapan bir proje oluşturdum. ",
       "Features": [
-        "🔹Dört farklı dil için çeviri yapma özelliği bulunuyor.",
-        "🔹 Responsive Tasarım özelliği bulunuyor.",
-        "🔹Başlık için animasyon özelliği bulunuyor.",
-        "🔹Seçilen dilleri tersine çevirme özelliği bulunuyor.",
-        "🔹Sonucu kopyalama özelliği bulunuyor.",
-        "🔹Girilen inputu silme özelliği bulunuyor.",
-        "🔹Tailwind de custom renkler ve animasyonlar eklendi.",
-        "🔹 Hata gösterimi ve günlük sınır aşımı için hata componenti oluşturuldu. ",
-        "🔹 Verimlilik ve performans için Cursor Ide önerileri ile değişiklikler yapıldı ve UseCallback ve UseMemo kullanıldı."
+        "🟦 Dört farklı dil için çeviri yapma özelliği bulunuyor.",
+        "🟦 Responsive Tasarım özelliği bulunuyor.",
+        "🟦 Başlık için animasyon özelliği bulunuyor.",
+        "🟦 Seçilen dilleri tersine çevirme özelliği bulunuyor.",
+        "🟦 Sonucu kopyalama özelliği bulunuyor.",
+        "🟦 Girilen inputu silme özelliği bulunuyor.",
+        "🟦 Tailwind de custom renkler ve animasyonlar eklendi.",
+        "🟦 Hata gösterimi ve günlük sınır aşımı için hata componenti oluşturuldu. ",
+        "🟦 Verimlilik ve performans için Cursor Ide önerileri ile değişiklikler yapıldı ve UseCallback ve UseMemo kullanıldı."
       ],
       "technologies": [
-        "🔸React",
-        "🔸Tailwind",
-        "🔸Mymemory Api",
-        "🔸Axios",
-        "🔸Lodash Debounce",
-        "🔸React Hooks",
-        "🔸React Icons"
+        "🟣 React",
+        "🟣 Tailwind",
+        "🟣 Mymemory Api",
+        "🟣 Axios",
+        "🟣 Lodash Debounce",
+        "🟣 React Hooks",
+        "🟣 React Icons"
       ]
     }
   },
@@ -175,25 +175,25 @@
     "description": {
       "title": "🪧`Bisiklet Dünyam` isimli projemde React, Firebase ve Css kullanarak oluşturduğum ilk kapsamlı özellikler barındıran alışveriş sitesi projem.",
       "Features": [
-        "🔹Giriş, kayıt, çıkış ve şifre sıfırlama özellikleri bulunuyor.",
-        "🔹Kullanıcı profili bölümü ve bilgi güncelleme özelliği",
-        "🔹Favoriler bölümü, favoriye alma, çıkarma özellikleri mevcut.",
-        "🔹Sipariş oluşturma, iptal etme özelliği bulunuyor.",
-        "🔹Admin için sipariş durumu güncelleme, iptal etme, ürün ekleme, ürün güncelleme özellikleri mevcut.",
-        "🔹Tüm sayfalar ayrıca responsive olarak ayarlandı",
-        "🔹Not olarak: İlk defa bu kadar kapsamlı bir proje yaptığım için Clean code prensiplerine uyamadım ve performans açısından yeterli seviyede değil. Ayrıca içerisinde bölüm bölüm hatalar barındırıyor. "
+        "🟦 Giriş, kayıt, çıkış ve şifre sıfırlama özellikleri bulunuyor.",
+        "🟦 Kullanıcı profili bölümü ve bilgi güncelleme özelliği",
+        "🟦 Favoriler bölümü, favoriye alma, çıkarma özellikleri mevcut.",
+        "🟦 Sipariş oluşturma, iptal etme özelliği bulunuyor.",
+        "🟦 Admin için sipariş durumu güncelleme, iptal etme, ürün ekleme, ürün güncelleme özellikleri mevcut.",
+        "🟦 Tüm sayfalar ayrıca responsive olarak ayarlandı",
+        "🟦 Not olarak: İlk defa bu kadar kapsamlı bir proje yaptığım için Clean code prensiplerine uyamadım ve performans açısından yeterli seviyede değil. Ayrıca içerisinde bölüm bölüm hatalar barındırıyor. "
       ],
       "technologies": [
-        "🔸React",
-        "🔸Css",
-        "🔸Firebase Auth",
-        "🔸Firebase Firestore",
-        "🔸Firebase Storage",
-        "🔸React-Hot-Toast",
-        "🔸React Redux",
-        "🔸React Hooks",
-        "🔸React Icons",
-        "🔸React Router Dom"
+        "🟣 React",
+        "🟣 Css",
+        "🟣 Firebase Auth",
+        "🟣 Firebase Firestore",
+        "🟣 Firebase Storage",
+        "🟣 React-Hot-Toast",
+        "🟣 React Redux",
+        "🟣 React Hooks",
+        "🟣 React Icons",
+        "🟣 React Router Dom"
       ]
     }
   },
@@ -209,24 +209,24 @@
     "description": {
       "title": "🪧`Whatsapp Web Clone` isimli projemde React, Firebase ve Scss kullanarak oluşturduğum whatsApp web özelliklerini barındıran bir clone projesidir.",
       "Features": [
-        "🔹Giriş, kayıt, çıkış ve şifre sıfırlama özellikleri bulunuyor.",
-        "🔹Grup oluşturma, silme ve grup arama özelliği bulunuyor.",
-        "🔹Yazılı ve görsel olarak ileti gönderme özelliği mevcut.",
-        "🔹Firebase Realtime kullanarak yapılan değişikliklerin gerçek zamanlı yansıması özelliği mevcut",
-        "🔹Admin için sipariş durumu güncelleme, iptal etme, ürün ekleme, ürün güncelleme özellikleri mevcut.",
-        "🔹Tasarım responsive olarak ayarlandı",
-        "🔹Not olarak: Kullanıcı hesap özelleştirme, kişiler arası mesajlaşma ve gruplarda kişi mantığı bulunmuyor."
+        "🟦 Giriş, kayıt, çıkış ve şifre sıfırlama özellikleri bulunuyor.",
+        "🟦 Grup oluşturma, silme ve grup arama özelliği bulunuyor.",
+        "🟦 Yazılı ve görsel olarak ileti gönderme özelliği mevcut.",
+        "🟦 Firebase Realtime kullanarak yapılan değişikliklerin gerçek zamanlı yansıması özelliği mevcut",
+        "🟦 Admin için sipariş durumu güncelleme, iptal etme, ürün ekleme, ürün güncelleme özellikleri mevcut.",
+        "🟦 Tasarım responsive olarak ayarlandı",
+        "🟦 Not olarak: Kullanıcı hesap özelleştirme, kişiler arası mesajlaşma ve gruplarda kişi mantığı bulunmuyor."
       ],
       "technologies": [
-        "🔸React",
-        "🔸Scss",
-        "🔸Firebase Auth",
-        "🔸Firebase Firestore",
-        "🔸Firebase Storage",
-        "🔸Firebase Realtime Database",
-        "🔸React Hooks",
-        "🔸React Icons",
-        "🔸React Router Dom"
+        "🟣 React",
+        "🟣 Scss",
+        "🟣 Firebase Auth",
+        "🟣 Firebase Firestore",
+        "🟣 Firebase Storage",
+        "🟣 Firebase Realtime Database",
+        "🟣 React Hooks",
+        "🟣 React Icons",
+        "🟣 React Router Dom"
       ]
     }
   },
@@ -241,11 +241,11 @@
     "description": {
       "title": "🪧`Para Harcama` isimli projemde React ve Css bullanarak UseContext tekrarı için oluşturduğum bir para harcama projesidir.",
       "Features": [
-        "🔹Sepete, ürün ekleme, çıkarma ve temizleme özellikleri mevcut",
-        "🔹Dinamik tutar gösterimi bulunuyor.",
-        "🔹Tasarım responsive olarak ayarlandı"
+        "🟦 Sepete, ürün ekleme, çıkarma ve temizleme özellikleri mevcut",
+        "🟦 Dinamik tutar gösterimi bulunuyor.",
+        "🟦 Tasarım responsive olarak ayarlandı"
       ],
-      "technologies": ["🔸React", "🔸Css", "🔸Use Context", "🔸React Hooks"]
+      "technologies": ["🟣 React", "🟣 Css", "🟣 Use Context", "🟣 React Hooks"]
     }
   },
   {
@@ -259,20 +259,20 @@
     "description": {
       "title": "🪧`Dream World` isimli projemde Vanilla Javascript ve Css bullanarak Tmdb Api dan çektiğim veriler ile oluşturduğum bir Film ve Dizi projesidir.",
       "Features": [
-        "🔹İçeri arama özelliği mevcut.",
-        "🔹İstenen içerik için detay sayfasını bulunuyor.",
-        "🔹Renk modu değiştirme özelliği mevcut",
-        "🔹Tasarım için dahili olarak eklenen videolar için kontroller bulunuyor.",
-        "🔹Tasarım responsive olarak ayarlandı"
+        "🟦 İçeri arama özelliği mevcut.",
+        "🟦 İstenen içerik için detay sayfasını bulunuyor.",
+        "🟦 Renk modu değiştirme özelliği mevcut",
+        "🟦 Tasarım için dahili olarak eklenen videolar için kontroller bulunuyor.",
+        "🟦 Tasarım responsive olarak ayarlandı"
       ],
       "technologies": [
-        "🔸Javascript",
-        "🔸Css",
-        "🔸Tmdb Api",
-        "🔸Fetch",
-        "🔸Dom",
-        "🔸Event Handling",
-        "🔸Dinamik Css"
+        "🟣 Javascript",
+        "🟣 Css",
+        "🟣 Tmdb Api",
+        "🟣 Fetch",
+        "🟣 Dom",
+        "🟣 Event Handling",
+        "🟣 Dinamik Css"
       ]
     }
   }
