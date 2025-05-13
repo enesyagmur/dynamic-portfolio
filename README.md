@@ -1,20 +1,36 @@
-🪧 "Portfolio" projemi sizlerle paylaşmak istiyorum. Typescript, Nextjs, Tailwind, Aceternity Ui kullanarak oluşturduğum kişisel bir web sitesidir. 
+🪧 Kişisel Portföy Web Sitesi
+Bu proje, TypeScript, Next.js, Tailwind CSS ve Aceternity UI kullanılarak geliştirilmiş kişisel bir portföy web sitesidir.
+Projelerimi, yeteneklerimi ve iletişim bilgilerimi içeren modern bir web sitesidir.
 
- 🔗 Live : https://lnkd.in/d3MbByiP
- 🔗 Github : https://lnkd.in/dSKjAyP3
+🔗 Canlı Demo
+Web Sitesi: Siteyi Ziyaret Et
 
+GitHub Reposu: Kodu Görüntüle
 
- 🔎 Özellikler:
- 🔹Tüm projeler için detay sayfası ve proje için gerekli linkler bulunuyor.
- 🔹Scroll durumuna bağlı değişen Aceternity componentlerini kullandım.
- 🔹Contact bölümü ile mail üzerinden iletişim kurma özelliği bulunuyor.
- 🔹Responsive tasarım bulunuyor.
- 
+✨ Özellikler
+🔹 Proje Detay Sayfaları – Her proje için ayrı bir detay sayfası ve ilgili bağlantılar yer alıyor.
 
-📱 Kullanılan Teknolojiler:
- 🔸Typescript
- 🔸Nextjs
- 🔸Tailwind
- 🔸Aceternity Ui
- 🔸Formspree
- 🔸React Icons
+🔹 Dinamik UI Bileşenleri – Scroll hareketine bağlı olarak değişen Aceternity UI bileşenleri kullanıldı.
+
+🔹 İletişim Formu – Ziyaretçiler Formspree üzerinden doğrudan e-posta ile iletişime geçebilir.
+
+🔹 Responsive Tasarım – Tüm cihazlarla uyumlu, mobil dostu bir arayüz sunar.
+
+🛠️ Kullanılan Teknolojiler
+TypeScript
+
+Next.js
+
+Tailwind CSS
+
+Aceternity UI
+
+Formspree
+
+React Icons
+
+📩 İletişim
+Site üzerindeki iletişim formunu kullanarak veya LinkedIn üzerinden bana ulaşabilirsiniz.
+
+📸 Ekran Görüntüleri (isteğe bağlı)
+(Dilersen buraya projeden ekran görüntüleri veya tanıtım GIF'leri ekleyebilirsin.)
