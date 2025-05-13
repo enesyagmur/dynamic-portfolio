@@ -34,9 +34,10 @@ Site üzerindeki iletişim formunu kullanarak veya LinkedIn üzerinden bana ula�
 
 📸 Ekran Görüntüleri 
 
+![Ekran görüntüsü 2025-05-13 120855](https://github.com/user-attachments/assets/b8ac7386-1b73-4909-aa98-9c1f09352aaf)
 ![Ekran görüntüsü 2025-05-13 120923](https://github.com/user-attachments/assets/2c64352f-d014-479c-aa04-0bab32351d1a)
 ![Ekran görüntüsü 2025-05-13 120945](https://github.com/user-attachments/assets/8c7238c4-4ab4-4f86-82ed-069597604eaf)
 ![Ekran görüntüsü 2025-05-13 121001](https://github.com/user-attachments/assets/c1bc257e-143c-45c9-b825-83d050bca02e)
 ![Ekran görüntüsü 2025-05-13 121027](https://github.com/user-attachments/assets/31026fa3-9918-4a2e-a4b4-5fca63cdc608)
 ![Ekran görüntüsü 2025-05-13 121043](https://github.com/user-attachments/assets/2ed57ea6-9a7b-426d-a1c4-f49935521948)
-![Ekran görüntüsü 2025-05-13 120855](https://github.com/user-attachments/assets/b8ac7386-1b73-4909-aa98-9c1f09352aaf)
+
