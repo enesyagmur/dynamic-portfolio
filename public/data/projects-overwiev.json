@@ -1,6 +1,68 @@
 [
   {
     "id": "0",
+    "name": "Student360 - Geliştirme Sürecindeyim",
+    "used": ["tailwind", "react", "firebase"],
+    "github": "https://github.com/enesyagmur/student360.git",
+    "live": "https://github.com/enesyagmur/student360.git",
+    "image": "/data/images/student360.png",
+    "video": "/data/videos/student360.mp4",
+    "description": {
+      "title": "🎓 Student360: Öğrenci Yönetimini Dijitale Taşıyan Akıllı Platform! Okullarda öğrenci, öğretmen, sınıf, ders ve sınav yönetimini kolaylaştıran, çok yönlü bir web uygulaması.",
+      "Features": [
+        "🟦 Rol Tabanlı Giriş Sistemi: Yönetici, öğretmen ve ileride öğrenci rolleriyle güvenli kullanıcı yönetimi",
+        "🟦 Yönetici ve Öğretmen Yönetimi: Kayıt, listeleme, arama ve silme işlemleri",
+        "🟦 Öğrenci, Sınıf ve Ders Yönetimi: Oluşturma, silme ve arama işlevleri tamamlandı",
+        "🟦 Duyuru Yönetimi: Kurum içi duyurular oluşturulup yönetilebiliyor",
+        "🟦 Sınav Yönetimi: Sınav oluşturma, listeleme ve silme işlemleri aktif",
+        "🟦 Gelişmiş Sayfa Yapısı: Her bölüm için ayrı, sade ve kullanışlı yönetim sayfaları"
+      ],
+      "technologies": [
+        "🟣 React + Vite: Modern, hızlı ve bileşen tabanlı arayüz",
+        "🟣 Redux Toolkit + Redux Thunk: Global durum ve asenkron veri yönetimi",
+        "🟣 React Router Dom: Sayfalar arası gezinme",
+        "🟣 React Hook Form + Yup: Form oluşturma ve doğrulama",
+        "🟣 Firebase: Authentication, Firestore ve Admin SDK ile veri ve kullanıcı yönetimi",
+        "🟣 Node.js: Arka uç işlemleri ve gelişmiş entegrasyonlar için",
+        "🟣 Tailwind CSS: Hızlı ve modern arayüz tasarımı",
+        "🟣 React Hot Toast: Anlık kullanıcı bildirimleri",
+        "🟣 UUID: Güvenli ve benzersiz ID üretimi"
+      ]
+    }
+  },
+  {
+    "id": "1",
+    "name": "CardNest",
+    "used": ["tailwind", "react", "firebase"],
+    "github": "https://github.com/enesyagmur/cardnest.git",
+    "live": "https://cardnest-psi.vercel.app/",
+    "image": "/data/images/cardnest.png",
+    "video": "/data/videos/cardnest.mp4",
+    "description": {
+      "title": "🎉 CardNest: Bilgi Kartlarıyla Akıllı Öğrenme! Bu proje, bilgi kartları (flashcards) ile öğrenme sürecini kişiselleştiren ve çok daha etkili hale getiren bir platform sunuyor.",
+      "Features": [
+        "🟦 Kullanıcı Yönetimi: Güvenli giriş, kayıt ve çıkış işlemleri",
+        "🟦 Koleksiyon Yönetimi: Kendi bilgi kartı koleksiyonlarınızı oluşturabilir, güncelleyebilir ve silebilirsiniz",
+        "🟦 Dinamik Kartlar: Farklı türlerde kartlar oluşturma, düzenleme ve silme imkanı",
+        "🟦 Hazır Şablonlar: Kart oluşturmayı kolaylaştıran dinamik şablonlar",
+        "🟦 Akıllı Pratik Algoritması: Zorluk ve son tekrar tarihine göre gösterilen kart sıklığını optimize eder",
+        "🟦 Keşfet Sayfası: Başkalarının oluşturduğu koleksiyonlara göz atabilir ve beğendiklerinizi klonlayarak pratik yapabilirsiniz"
+      ],
+      "technologies": [
+        "🟣 React 19: Modern kullanıcı arayüzü",
+        "🟣 Redux Toolkit: Güçlü ve ölçeklenebilir global durum yönetimi",
+        "🟣 React Hook Form + Yup: Etkili form yönetimi ve doğrulama",
+        "🟣 React Hot Toast: Kullanıcı dostu bildirim sistemi",
+        "🟣 React Router Dom: Sayfalar arası yönlendirme",
+        "🟣 Firebase: Authentication & veritabanı altyapısı",
+        "🟣 Tailwind CSS: Hızlı ve esnek tasarım",
+        "🟣 UUID: Benzersiz ID üretimi",
+        "🟣 Redux Thunk: Asenkron işlemler için middleware"
+      ]
+    }
+  },
+  {
+    "id": "2",
     "name": "Code Editor",
     "used": ["tailwind", "typescript", "nextjs"],
     "github": "https://github.com/enesyagmur/code-editor.git",
@@ -24,7 +86,7 @@
   },
 
   {
-    "id": "1",
+    "id": "3",
     "name": "Mutfakta ne var?",
     "used": ["typescript", "react", "tailwind", "firebase"],
     "github": "https://github.com/enesyagmur/what-in-kitchen.git",
@@ -62,7 +124,7 @@
     }
   },
   {
-    "id": "2",
+    "id": "4",
     "name": "Adam Asmaca",
     "used": ["tailwind", "typescript", "react"],
     "github": "https://github.com/enesyagmur/adam-asmaca.git",
@@ -93,8 +155,9 @@
       ]
     }
   },
+
   {
-    "id": "3",
+    "id": "5",
     "name": "Yotube Clone",
     "used": ["tailwind", "typescript", "react"],
     "github": "https://github.com/enesyagmur/youtube-clone.git",
@@ -131,7 +194,7 @@
   },
 
   {
-    "id": "4",
+    "id": "6",
     "name": "Poly Translate",
     "used": ["react", "tailwind"],
     "github": "https://github.com/enesyagmur/poly-translate.git",
@@ -164,7 +227,7 @@
     }
   },
   {
-    "id": "5",
+    "id": "7",
     "name": "Bisiklet Dunyam",
     "used": ["react", "css", "firebase"],
     "github": "https://github.com/enesyagmur/bisiklet-dunyam.git",
@@ -198,7 +261,7 @@
     }
   },
   {
-    "id": "6",
+    "id": "8",
     "name": "Whatsapp Web Clone",
     "used": ["react", "scss", "firebase"],
     "github": "https://github.com/enesyagmur/whatsapp-web-clone.git",
@@ -231,25 +294,7 @@
     }
   },
   {
-    "id": "7",
-    "name": "Elon ın Parasını Harcama",
-    "used": ["react", "css"],
-    "github": "https://github.com/enesyagmur/para-harcama-app.git",
-    "live": "https://dancing-ganache-7a2bdb.netlify.app/",
-    "image": "/data/images/para-harcama.png",
-    "video": "/data/videos/para-harcama.mp4",
-    "description": {
-      "title": "🪧`Para Harcama` isimli projemde React ve Css bullanarak UseContext tekrarı için oluşturduğum bir para harcama projesidir.",
-      "Features": [
-        "🟦 Sepete, ürün ekleme, çıkarma ve temizleme özellikleri mevcut",
-        "🟦 Dinamik tutar gösterimi bulunuyor.",
-        "🟦 Tasarım responsive olarak ayarlandı"
-      ],
-      "technologies": ["🟣 React", "🟣 Css", "🟣 Use Context", "🟣 React Hooks"]
-    }
-  },
-  {
-    "id": "8",
+    "id": "9",
     "name": "Dream World",
     "used": ["javascript", "css"],
     "github": "https://github.com/enesyagmur/Movie-App.git",
