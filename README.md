@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🪧 Kişisel Portföy Web Sitesi
+Bu proje, TypeScript, Next.js, Tailwind CSS ve Aceternity UI kullanılarak geliştirilmiş kişisel bir portföy web sitesidir.
+Projelerimi, yeteneklerimi ve iletişim bilgilerimi içeren modern bir web sitesidir.
 
-## Getting Started
+🔗 Canlı Demo
+Web Sitesi: Siteyi Ziyaret Et
 
-First, run the development server:
+GitHub Reposu: Kodu Görüntüle
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✨ Özellikler
+🔹 Proje Detay Sayfaları – Her proje için ayrı bir detay sayfası ve ilgili bağlantılar yer alıyor.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔹 Dinamik UI Bileşenleri – Scroll hareketine bağlı olarak değişen Aceternity UI bileşenleri kullanıldı.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔹 İletişim Formu – Ziyaretçiler Formspree üzerinden doğrudan e-posta ile iletişime geçebilir.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔹 Responsive Tasarım – Tüm cihazlarla uyumlu, mobil dostu bir arayüz sunar.
 
-## Learn More
+🛠️ Kullanılan Teknolojiler
+TypeScript
 
-To learn more about Next.js, take a look at the following resources:
+Next.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Aceternity UI
 
-## Deploy on Vercel
+Formspree
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+React Icons
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📩 İletişim
+Site üzerindeki iletişim formunu kullanarak veya LinkedIn üzerinden bana ulaşabilirsiniz.
+
+📸 Ekran Görüntüleri 
+
+![Ekran görüntüsü 2025-05-13 120855](https://github.com/user-attachments/assets/b8ac7386-1b73-4909-aa98-9c1f09352aaf)
+![Ekran görüntüsü 2025-05-13 120923](https://github.com/user-attachments/assets/2c64352f-d014-479c-aa04-0bab32351d1a)
+![Ekran görüntüsü 2025-05-13 120945](https://github.com/user-attachments/assets/8c7238c4-4ab4-4f86-82ed-069597604eaf)
+![Ekran görüntüsü 2025-05-13 121001](https://github.com/user-attachments/assets/c1bc257e-143c-45c9-b825-83d050bca02e)
+![Ekran görüntüsü 2025-05-13 121027](https://github.com/user-attachments/assets/31026fa3-9918-4a2e-a4b4-5fca63cdc608)
+![Ekran görüntüsü 2025-05-13 121043](https://github.com/user-attachments/assets/2ed57ea6-9a7b-426d-a1c4-f49935521948)
+
