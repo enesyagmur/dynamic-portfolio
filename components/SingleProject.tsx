@@ -12,22 +12,10 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { RiNextjsFill } from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
 import { GoArrowRight } from "react-icons/go";
+import type { Project } from "@/lib/types";
 
 interface ProjectProps {
-  item: {
-    id: string;
-    name: string;
-    used: string[];
-    github: string;
-    live: string;
-    image: string;
-    video: string;
-    description: {
-      title: string;
-      Features: string[];
-      technologies: string[];
-    };
-  };
+  item: Project;
 }
 
 interface Icons {

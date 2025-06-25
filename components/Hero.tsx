@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Spotlight } from "../components/ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Image from "next/image";
-import officalProfile from "../public/data/images/officalProfile.png";
-import casualProfile from "../public/data/images/casualProfile.png";
 
 interface HeroProps {
   scrollToContact: () => void;
@@ -54,7 +52,9 @@ const Hero: React.FC<HeroProps> = ({ scrollToContact }) => {
 
         {randomProfile === 0 ? (
           <Image
-            src={officalProfile}
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/portfolio-36161.firebasestorage.app/o/images%2FofficalProfile.png?alt=media&token=384d881e-b2d3-47bb-9589-5817344619a8"
+            }
             width={300}
             height={300}
             className="profile-image object-cover absolute z-20 ml-28 scale-110"
@@ -62,7 +62,9 @@ const Hero: React.FC<HeroProps> = ({ scrollToContact }) => {
           />
         ) : (
           <Image
-            src={casualProfile}
+            src={
+              "https://firebasestorage.googleapis.com/v0/b/portfolio-36161.firebasestorage.app/o/images%2FcasualProfile.png?alt=media&token=bd4899e5-d40f-46d5-8765-23d6b29e804c"
+            }
             width={300}
             height={300}
             className="profile-image object-cover absolute z-20"
