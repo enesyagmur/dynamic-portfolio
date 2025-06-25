@@ -37,9 +37,9 @@ Bu proje, **TypeScript**, **Next.js**, **Tailwind CSS** ve **Aceternity UI** kul
 
 ## 📸 Ekran Görüntüsü / Tanıtım
 
-> 🎥 *Aşağıya proje tanıtımına dair bir GIF ekleyin*
+> 🎥![portfolio-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/d02b5ec6-10ee-466d-9c9f-570a43d6efc3)
 
-![Portfolio Preview](./public/portfolio-preview.gif)
+
 
 ---
 
