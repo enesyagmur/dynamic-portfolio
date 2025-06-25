@@ -1,43 +1,56 @@
-🪧 Kişisel Portföy Web Sitesi
-Bu proje, TypeScript, Next.js, Tailwind CSS ve Aceternity UI kullanılarak geliştirilmiş kişisel bir portföy web sitesidir.
-Projelerimi, yeteneklerimi ve iletişim bilgilerimi içeren modern bir web sitesidir.
+# 🪧 Kişisel Portföy Web Sitesi
 
-🔗 Canlı Demo
-Web Sitesi: Siteyi Ziyaret Et
+Bu proje, **TypeScript**, **Next.js**, **Tailwind CSS** ve **Aceternity UI** kullanılarak geliştirilmiş kişisel bir portföy web sitesidir. Projelerimi, yeteneklerimi ve iletişim bilgilerimi içeren modern, dinamik ve mobil uyumlu bir vitrin sunar.
 
-GitHub Reposu: Kodu Görüntüle
+🔗 **Canlı Demo:** [dynamic-portfolio-indol.vercel.app](https://dynamic-portfolio-indol.vercel.app)
 
-✨ Özellikler
-🔹 Proje Detay Sayfaları – Her proje için ayrı bir detay sayfası ve ilgili bağlantılar yer alıyor.
+---
 
-🔹 Dinamik UI Bileşenleri – Scroll hareketine bağlı olarak değişen Aceternity UI bileşenleri kullanıldı.
+## ✨ Özellikler
 
-🔹 İletişim Formu – Ziyaretçiler Formspree üzerinden doğrudan e-posta ile iletişime geçebilir.
+- 🔍 **Proje Detay Sayfaları**  
+  Her proje için özel bir sayfa ve proje ile ilgili dış bağlantılar yer almakta.
 
-🔹 Responsive Tasarım – Tüm cihazlarla uyumlu, mobil dostu bir arayüz sunar.
+- 🌀 **Dinamik UI Bileşenleri**  
+  Scroll hareketine göre tetiklenen **Aceternity UI** bileşenleriyle zenginleştirilmiş arayüz.
 
-🛠️ Kullanılan Teknolojiler
-TypeScript
+- 📩 **İletişim Formu**  
+  **Formspree** entegrasyonu ile doğrudan e-posta üzerinden ulaşım imkânı.
 
-Next.js
+- 📱 **Responsive Tasarım**  
+  Mobil, tablet ve masaüstü cihazlarda tam uyumluluk.
 
-Tailwind CSS
+---
 
-Aceternity UI
+## 🛠️ Kullanılan Teknolojiler
 
-Formspree
+| Teknoloji        | Açıklama                                      |
+|------------------|-----------------------------------------------|
+| ⚙️ TypeScript     | Güçlü tip desteği ile geliştirici deneyimi    |
+| ⚛️ Next.js        | React tabanlı modern ve hızlı framework       |
+| 🎨 Tailwind CSS   | Utility-first CSS framework                   |
+| 🌌 Aceternity UI  | Gelişmiş animasyonlu UI bileşenleri          |
+| 💌 Formspree      | İletişim formu için e-posta gönderimi        |
+| 💎 React Icons    | İkon bileşenleri                              |
 
-React Icons
+---
 
-📩 İletişim
-Site üzerindeki iletişim formunu kullanarak veya LinkedIn üzerinden bana ulaşabilirsiniz.
+## 📸 Ekran Görüntüsü / Tanıtım
 
-📸 Ekran Görüntüleri 
+> 🎥![portfolio-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/d02b5ec6-10ee-466d-9c9f-570a43d6efc3)
 
-![Ekran görüntüsü 2025-05-13 120855](https://github.com/user-attachments/assets/b8ac7386-1b73-4909-aa98-9c1f09352aaf)
-![Ekran görüntüsü 2025-05-13 120923](https://github.com/user-attachments/assets/2c64352f-d014-479c-aa04-0bab32351d1a)
-![Ekran görüntüsü 2025-05-13 120945](https://github.com/user-attachments/assets/8c7238c4-4ab4-4f86-82ed-069597604eaf)
-![Ekran görüntüsü 2025-05-13 121001](https://github.com/user-attachments/assets/c1bc257e-143c-45c9-b825-83d050bca02e)
-![Ekran görüntüsü 2025-05-13 121027](https://github.com/user-attachments/assets/31026fa3-9918-4a2e-a4b4-5fca63cdc608)
-![Ekran görüntüsü 2025-05-13 121043](https://github.com/user-attachments/assets/2ed57ea6-9a7b-426d-a1c4-f49935521948)
+
+
+---
+
+## 📩 İletişim
+
+Sitedeki iletişim formunu kullanarak ya da [LinkedIn](https://www.linkedin.com/) üzerinden bana ulaşabilirsiniz.
+
+---
+
+## ⭐ Destek Olmak İsterseniz
+
+Projeyi beğendiyseniz ⭐ vererek destek olabilirsiniz.  
+Her türlü geri bildirim ve katkıya açığım!
 
