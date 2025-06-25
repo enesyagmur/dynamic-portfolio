@@ -1,25 +1,41 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { SparklesCore } from "./ui/Sparkles";
 import SingleProject from "./SingleProject";
-import { getProjectsService } from "../features/projectsService";
-import { type Projects } from "@/lib/types";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState, AppDispatch } from "@/store";
+import { fetchProjects } from "@/features/projectsThunk";
+import Loading from "./ui/Loading";
+import SomethingWrong from "./ui/SomethingWrong";
+import NoData from "./ui/NoData";
 
 export function Projects() {
-  const [projects, setProjects] = useState<Projects>([]);
+  const dispatch = useDispatch<AppDispatch>();
+  const { projects, loading, error } = useSelector(
+    (state: RootState) => state.projects
+  );
+
   useEffect(() => {
-    const fetchProjects = async () => {
-      const result: Projects = await getProjectsService();
+    dispatch(fetchProjects());
+  }, [dispatch]);
 
-      if (result) {
-        setProjects(result);
-      }
-    };
+  let content = null;
+  if (loading) {
+    content = <Loading />;
+  } else if (error) {
+    content = <SomethingWrong message={error} />;
+  } else if (!projects.length) {
+    content = <NoData />;
+  } else {
+    content = (
+      <div className="w-full md:w-10/12 flex flex-wrap">
+        {projects.map((item) => (
+          <SingleProject key={item.id} item={item} />
+        ))}
+      </div>
+    );
+  }
 
-    if (projects.length === 0) {
-      fetchProjects();
-    }
-  }, [projects]);
   return (
     <div className="w-full flex flex-col items-center justify-center relative">
       <SparklesCore
@@ -36,11 +52,7 @@ export function Projects() {
         <p className="text-3xl md:text-5xl">PROJELER</p>
       </div>
 
-      <div className="w-full md:w-10/12 flex flex-wrap">
-        {projects?.map((item, index) => (
-          <SingleProject key={index} item={item} />
-        ))}
-      </div>
+      {content}
     </div>
   );
 }
