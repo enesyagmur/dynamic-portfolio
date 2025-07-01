@@ -12,7 +12,6 @@ import { BiLogoTypescript } from "react-icons/bi";
 import { RiNextjsFill } from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
 import { GoArrowRight } from "react-icons/go";
-import { HiOutlineExternalLink } from "react-icons/hi";
 import type { Project } from "@/lib/types";
 
 interface ProjectProps {
