@@ -1,92 +1,229 @@
-import React, { useEffect, useState, useMemo, memo } from "react";
-import { Spotlight } from "../components/ui/Spotlight";
-import { TextGenerateEffect } from "./ui/text-generate-effect";
+"use client";
+
+import { useEffect, useState, memo, useCallback, useMemo } from "react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi2";
 import Image from "next/image";
 
-interface HeroProps {
-  scrollToContact: () => void;
-}
+const Hero = memo(() => {
+  const [currentText, setCurrentText] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-const Hero: React.FC<HeroProps> = memo(({ scrollToContact }) => {
-  const [randomProfile, setRandomProfile] = useState<number>();
-  const memoizedProfile = useMemo(() => Math.round(Math.random() * 3), []);
+  // Memoized static data
+  const dynamicTexts = useMemo(
+    () => [
+      "React Uygulamaları Geliştirme",
+      "TypeScript ile Güvenli Kodlama",
+      "Next.js ile SEO Dostu Siteler",
+      "Tailwind CSS ile Şık Tasarımlar",
+      "Responsive Web Tasarımı",
+      "UI/UX Temel Tasarım Çözümleri",
+      "Performans Optimizasyonu",
+    ],
+    []
+  );
+
+  const stats = useMemo(
+    () => [
+      { value: "6+", label: "Tech" },
+      { value: "8+", label: "Tools" },
+      { value: "2+", label: "Years" },
+      { value: "15+", label: "Projects" },
+      { value: "1100+", label: "Commits" },
+    ],
+    []
+  );
+
+  const socialLinks = useMemo(
+    () => [
+      {
+        icon: FaGithub,
+        href: "https://github.com/enesyagmur",
+        color: "hover:text-gray-900",
+      },
+      {
+        icon: FaLinkedin,
+        href: "https://linkedin.com/in/enes-yağmur-4b6201249/",
+        color: "hover:text-blue-600",
+      },
+      {
+        icon: FaEnvelope,
+        href: "mailto:enesyagmuroffical@gmail.com",
+        color: "hover:text-red-500",
+      },
+    ],
+    []
+  );
+
+  // Optimized callbacks
+  const scrollToSection = useCallback((id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  const downloadCV = useCallback(() => {
+    const link = document.createElement("a");
+    link.href = "/enes-yagmur-cv.pdf";
+    link.download = "Enes_Yagmur_CV.pdf";
+    link.click();
+  }, []);
+
+  const handleProjectsClick = useCallback(
+    () => scrollToSection("projects"),
+    [scrollToSection]
+  );
+  const handleContactClick = useCallback(
+    () => scrollToSection("contact"),
+    [scrollToSection]
+  );
+
   useEffect(() => {
-    setRandomProfile(memoizedProfile);
-  }, [memoizedProfile]);
+    setIsLoaded(true);
+    const interval = setInterval(() => {
+      setCurrentText((prev) => (prev + 1) % dynamicTexts.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [dynamicTexts.length]);
 
   return (
-    <div className="w-full h-[700px] md:h-screen flex flex-col lg:flex-row items-center justify-between md:justify-center relative  overflow-hidden">
-      {/* grid background */}
-      <div className="w-full h-full bg-grid-white/[0.06] flex items-center justify-center absolute top-0 left-0">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+    <section className="relative w-full min-h-screen flex items-center py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      {/* Simplified background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-60"></div>
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-60"></div>
       </div>
 
-      {/* spotlights */}
-      <div>
-        {/* Blue */}
-        <Spotlight
-          className="top-20 left-8 lg:top-0 lg:left-8 lg:w-full w-[800px]"
-          fill="#3b82f6"
-        />
-        {/* White */}
-        <Spotlight
-          className="top-20 left-40 lg:top-0 lg:left-56 lg:w-full w-[800px]"
-          fill="#8b5cf6"
-        />
+      <div className="relative max-w-6xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center">
+          {/* Text Content */}
+          <div
+            className={`space-y-4 order-2 lg:order-1 transition-all duration-700 ${
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            {/* Compact Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200/50 shadow-sm w-max">
+              <HiSparkles className="text-yellow-500 text-xs" />
+              <span className="text-xs font-medium text-gray-700">
+                Hello World!
+              </span>
+            </div>
 
-        {/* Purple */}
-        {
-          <Spotlight
-            className="top-20 left-64 lg:top-0 lg:left-96 lg:w-full w-[800px]"
-            fill="#a855f7"
-          />
-        }
+            {/* Compact heading */}
+            <div className="space-y-2">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                  Enes Yağmur
+                </span>
+              </h1>
+
+              {/* Dynamic text */}
+              <div className="h-6 sm:h-7 overflow-hidden">
+                <p className="text-base sm:text-lg text-gray-600 font-medium transition-all duration-500">
+                  {dynamicTexts[currentText]}
+                </p>
+              </div>
+            </div>
+
+            {/* Compact description */}
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">
+              Frontend geliştirici olarak, kullanıcı dostu ve modern web
+              uygulamaları yaratmaya odaklanıyorum. Yazılım yolculuğuma lise
+              yıllarında web tasarımıyla başladım ve Balıkesir Üniversitesi
+              Bilgisayar Programcılığı bölümünde eğitim aldım. Şu anda Bilgen
+              Yazılım Akademi’de frontend bootcamp eğitimimi tamamlamak
+              üzereyim. HTML, CSS, JavaScript ve React başta olmak üzere;
+              Tailwind CSS, Firebase, TypeScript ve Next.js gibi teknolojilerle
+              projeler geliştiriyorum. Yazılım, benim için sadece bir meslek
+              değil, tutku ve sürekli öğrenme yolculuğu.
+            </p>
+
+            {/* Compact Stats */}
+            <div className="flex flex-wrap gap-2 py-2">
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="flex-1 min-w-[90px] max-w-[110px] p-2 sm:p-3 bg-white/70 backdrop-blur-sm rounded-lg shadow-sm border border-gray-100 hover:shadow-md hover:scale-105 transition-all duration-300 text-center"
+                >
+                  <div className="font-bold text-sm sm:text-base text-gray-800">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-gray-600">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Compact Buttons */}
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              <button
+                onClick={handleProjectsClick}
+                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-sm font-medium hover:shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                Projeler
+              </button>
+              <button
+                onClick={handleContactClick}
+                className="px-4 py-2 bg-white/80 backdrop-blur-sm text-gray-700 rounded-lg text-sm font-medium border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300"
+              >
+                İletişim
+              </button>
+              <button
+                onClick={downloadCV}
+                className="px-4 py-2 flex items-center gap-1.5 bg-white/80 backdrop-blur-sm text-gray-700 rounded-lg text-sm font-medium border border-gray-200 hover:bg-white hover:shadow-md transition-all duration-300"
+              >
+                <FaDownload size={12} />
+                CV İndir
+              </button>
+            </div>
+
+            {/* Compact Social Links */}
+            <div className="flex gap-2 pt-3">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target={
+                    social.href.startsWith("mailto:") ? undefined : "_blank"
+                  }
+                  rel={
+                    social.href.startsWith("mailto:") ? undefined : "noopener"
+                  }
+                  className={`p-2.5 bg-white/70 backdrop-blur-sm rounded-lg text-gray-600 ${social.color} transition-all duration-300 hover:shadow-md hover:scale-110 border border-gray-100`}
+                >
+                  <social.icon size={16} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Compact Image Section */}
+          <div
+            className={`relative order-1 lg:order-2 transition-all duration-700 delay-200 ${
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <div className="relative group">
+              <div className="relative h-64 sm:h-80 lg:h-96 w-full max-w-sm mx-auto lg:max-w-none rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="https://firebasestorage.googleapis.com/v0/b/portfolio-36161.firebasestorage.app/o/images%2FofficalProfile.png?alt=media&token=384d881e-b2d3-47bb-9589-5817344619a8"
+                  alt="Enes Yağmur"
+                  fill
+                  className="object-cover ml-16 object-center group-hover:scale-105 transition-transform duration-500"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                  quality={85}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+              </div>
+
+              {/* Simplified decorative elements */}
+              <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-lg"></div>
+              <div className="absolute -bottom-2 -left-2 w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-20 blur-lg"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <TextGenerateEffect
-        words="Merhaba, Ben Enes Frontend Developer'ım."
-        className="w-10/12 h-1/6 lg:w-4/12 lg:h-4/6 flex items-end md:items-start lg:items-center justify-center text-center lg:text-center text-xl md:text-4xl lg:text-5xl"
-      />
-
-      <div className="w-[300px] h-[300px] flex flex-col items-center justify-center relative">
-        <div className="w-[250px] h-[250px] opacity-80  rounded-full bg-neutral-900 z-10 "></div>
-        <div className="w-[300px] h-[300px]  rounded-full bg-neutral-950 absolute"></div>
-
-        {randomProfile === 0 ? (
-          <Image
-            src={
-              "https://firebasestorage.googleapis.com/v0/b/portfolio-36161.firebasestorage.app/o/images%2FofficalProfile.png?alt=media&token=384d881e-b2d3-47bb-9589-5817344619a8"
-            }
-            width={300}
-            height={300}
-            className="profile-image object-cover absolute z-20 ml-28 scale-110"
-            alt="Profil Resmi"
-          />
-        ) : (
-          <Image
-            src={
-              "https://firebasestorage.googleapis.com/v0/b/portfolio-36161.firebasestorage.app/o/images%2FcasualProfile.png?alt=media&token=bd4899e5-d40f-46d5-8765-23d6b29e804c"
-            }
-            width={300}
-            height={300}
-            className="profile-image object-cover absolute z-20"
-            alt="Profil Resmi"
-          />
-        )}
-
-        <button
-          onClick={scrollToContact}
-          className="w-[120px] h-[40px] lg:w-[180px] lg:h-[50px] rounded-xl bg-highBlack border-[2px] border-neutral-600 absolute -bottom-16 md:-bottom-44 z-50  hover:animate-borderHover"
-        >
-          İletişim
-        </button>
-      </div>
-
-      <p className="w-9/12 md:w-8/12 lg:w-4/12 h-1/6 lg:h-4/6 lg:px-4 flex items-center justify-center md:tracking-wider text-sm  lg:text-[16px] mt-4 text-center lg:text-center text-neutral-400">
-        React, Typescript, Tailwind ve Firebase ile web projeleri
-        geliştiriyorum. Sürekli öğrenerek kendimi geliştirmeyi ve bu alanda bir
-        kariyer hedefliyorum.
-      </p>
-    </div>
+    </section>
   );
 });
 

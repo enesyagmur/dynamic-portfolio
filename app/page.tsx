@@ -1,26 +1,23 @@
 "use client";
+
 import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Hero from "@/components/Hero";
 import { Projects } from "@/components/Projects";
-import { LampContainer } from "@/components/ui/lamp";
-import { useRef } from "react";
+import Services from "@/components/Services";
+import Skills from "@/components/Skills";
+import Tools from "@/components/Tools";
 
 export default function Home() {
-  const contactRef = useRef<HTMLDivElement>(null);
-
-  const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center  text-white">
-      <Hero scrollToContact={scrollToContact} />
-
-      <Education />
-      <LampContainer />
+    <main className="relative min-h-screen bg-white text-zinc-800 scroll-smooth">
+      <Hero />
+      <Skills />
+      <Tools />
+      <Services />
       <Projects />
-      <Contact reference={contactRef} />
-    </div>
+      <Education />
+      <Contact />
+    </main>
   );
 }

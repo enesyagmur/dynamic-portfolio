@@ -1,13 +1,12 @@
 "use client";
-import React, { useEffect, memo } from "react";
-import { SparklesCore } from "./ui/Sparkles";
+
+import React, { useEffect, memo, useState } from "react";
 import SingleProject from "./SingleProject";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import type { RootState, AppDispatch } from "@/store";
 import { fetchProjects } from "@/features/projectsThunk";
-import Loading from "./ui/Loading";
-import SomethingWrong from "./ui/SomethingWrong";
-import NoData from "./ui/NoData";
+import { FaCode, FaRocket, FaLightbulb } from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi2";
 
 export const Projects = memo(function Projects() {
   const dispatch = useDispatch<AppDispatch>();
@@ -16,44 +15,113 @@ export const Projects = memo(function Projects() {
     shallowEqual
   );
 
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     dispatch(fetchProjects());
+    setIsVisible(true);
   }, [dispatch]);
 
-  let content = null;
-  if (loading) {
-    content = <Loading />;
-  } else if (error) {
-    content = <SomethingWrong message={error} />;
-  } else if (!projects.length) {
-    content = <NoData />;
-  } else {
-    content = (
-      <div className="w-full md:w-10/12 flex flex-wrap">
-        {projects.map((item) => (
-          <SingleProject key={item.id} item={item} />
-        ))}
-      </div>
-    );
-  }
+  // Filter categories (adjust based on your project data structure)
+  const categories = [
+    { id: "all", label: "Tümü", icon: <FaCode /> },
+    { id: "react", label: "React", icon: <FaRocket /> },
+    { id: "nextjs", label: "Next.js", icon: <FaLightbulb /> },
+  ];
 
   return (
-    <div className="w-full flex flex-col items-center justify-center relative">
-      <SparklesCore
-        id="tsparticlesfullpage"
-        background="transparent"
-        minSize={0.1}
-        maxSize={1}
-        particleDensity={100}
-        className="w-full h-full"
-        particleColor="#FFFFFF"
-      />
+    <section
+      id="projects"
+      className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24"
+    >
+      {/* Background Elements */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full opacity-10 blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-15 blur-xl animate-pulse delay-1000"></div>
 
-      <div className="w-full h-[150px] flex items-center justify-center">
-        <p className="text-3xl md:text-5xl">PROJELER</p>
+      {/* Header */}
+      <div
+        className={`text-center mb-16 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200 shadow-sm mb-6">
+          <HiSparkles className="text-purple-500 text-lg" />
+          <span className="text-sm font-medium text-gray-700">Portföyüm</span>
+        </div>
+
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            Projelerim
+          </span>
+        </h2>
+
+        <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full mb-6"></div>
+
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Geliştirdiğim modern web projeleri ve çözümler. Her biri farklı
+          teknolojiler ve yaratıcı yaklaşımlar içeriyor.
+        </p>
       </div>
 
-      {content}
-    </div>
+      {/* Loading State */}
+      {loading && (
+        <div className="flex flex-col items-center justify-center py-20">
+          <div className="relative">
+            <div className="w-16 h-16 border-4 border-blue-200 rounded-full animate-spin"></div>
+            <div className="absolute top-0 left-0 w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+          <p className="text-gray-600 text-lg mt-4 animate-pulse">
+            Projeler yükleniyor...
+          </p>
+        </div>
+      )}
+
+      {/* Error State */}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+          <div className="text-red-600 text-lg font-semibold mb-2">
+            Üzgünüz, bir hata oluştu
+          </div>
+          <p className="text-red-500">{error}</p>
+        </div>
+      )}
+
+      {/* Projects Grid */}
+      {!loading && !error && (
+        <>
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 transition-all duration-1000 delay-500 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
+          >
+            {projects.map((item, index) => (
+              <div
+                key={item.id}
+                className="transition-all duration-500"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <SingleProject item={item} />
+              </div>
+            ))}
+          </div>
+
+          {/* Empty State */}
+          {projects.length === 0 && !loading && (
+            <div className="text-center py-20">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                Bu kategoride proje bulunamadı
+              </h3>
+              <p className="text-gray-500">
+                Diğer kategorileri kontrol edebilir veya tüm projeleri
+                görüntüleyebilirsiniz.
+              </p>
+            </div>
+          )}
+        </>
+      )}
+    </section>
   );
 });
