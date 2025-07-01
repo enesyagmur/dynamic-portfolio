@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, memo, useState } from "react";
+import React, { useEffect, memo, useState, useRef } from "react";
 import SingleProject from "./SingleProject";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import type { RootState, AppDispatch } from "@/store";
 import { fetchProjects } from "@/features/projectsThunk";
-import { FaCode, FaRocket, FaLightbulb } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
+import type { Project } from "@/lib/types";
 
 export const Projects = memo(function Projects() {
   const dispatch = useDispatch<AppDispatch>();
@@ -16,18 +16,17 @@ export const Projects = memo(function Projects() {
   );
 
   const [isVisible, setIsVisible] = useState(false);
+  const fetchedRef = useRef(false);
 
   useEffect(() => {
-    dispatch(fetchProjects());
+    if (!fetchedRef.current) {
+      dispatch(fetchProjects());
+      fetchedRef.current = true;
+    }
     setIsVisible(true);
   }, [dispatch]);
 
-  // Filter categories (adjust based on your project data structure)
-  const categories = [
-    { id: "all", label: "Tümü", icon: <FaCode /> },
-    { id: "react", label: "React", icon: <FaRocket /> },
-    { id: "nextjs", label: "Next.js", icon: <FaLightbulb /> },
-  ];
+  const safeProjects = Array.isArray(projects) ? projects : [];
 
   return (
     <section
@@ -77,7 +76,7 @@ export const Projects = memo(function Projects() {
       )}
 
       {/* Error State */}
-      {error && (
+      {!loading && error && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
           <div className="text-red-600 text-lg font-semibold mb-2">
             Üzgünüz, bir hata oluştu
@@ -87,40 +86,36 @@ export const Projects = memo(function Projects() {
       )}
 
       {/* Projects Grid */}
-      {!loading && !error && (
-        <>
-          <div
-            className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 transition-all duration-1000 delay-500 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            {projects.map((item, index) => (
-              <div
-                key={item.id}
-                className="transition-all duration-500"
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <SingleProject item={item} />
-              </div>
-            ))}
-          </div>
-
-          {/* Empty State */}
-          {projects.length === 0 && !loading && (
-            <div className="text-center py-20">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">
-                Bu kategoride proje bulunamadı
-              </h3>
-              <p className="text-gray-500">
-                Diğer kategorileri kontrol edebilir veya tüm projeleri
-                görüntüleyebilirsiniz.
-              </p>
+      {!loading && !error && safeProjects.length > 0 && (
+        <div
+          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 transition-all duration-1000 delay-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          {safeProjects.map((item: Project, index: number) => (
+            <div
+              key={item.id || index}
+              className="transition-all duration-500"
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <SingleProject item={item} />
             </div>
-          )}
-        </>
+          ))}
+        </div>
+      )}
+
+      {/* Empty State */}
+      {!loading && !error && safeProjects.length === 0 && (
+        <div className="text-center py-20">
+          <div className="text-6xl mb-4">🔍</div>
+          <h3 className="text-xl font-semibold text-gray-700 mb-2">
+            Bu kategoride proje bulunamadı
+          </h3>
+          <p className="text-gray-500">
+            Diğer kategorileri kontrol edebilir veya tüm projeleri
+            görüntüleyebilirsiniz.
+          </p>
+        </div>
       )}
     </section>
   );

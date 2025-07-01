@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, memo, useCallback, useMemo } from "react";
+import { useEffect, useState, memo, useCallback, useMemo, useRef } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
 import Image from "next/image";
@@ -8,6 +8,8 @@ import Image from "next/image";
 const Hero = memo(() => {
   const [currentText, setCurrentText] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Memoized static data
   const dynamicTexts = useMemo(
@@ -57,7 +59,10 @@ const Hero = memo(() => {
 
   // Optimized callbacks
   const scrollToSection = useCallback((id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   }, []);
 
   const downloadCV = useCallback(() => {
@@ -78,12 +83,18 @@ const Hero = memo(() => {
 
   useEffect(() => {
     setIsLoaded(true);
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setCurrentText((prev) => (prev + 1) % dynamicTexts.length);
     }, 3000);
-
-    return () => clearInterval(interval);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [dynamicTexts.length]);
+
+  // Profil resmi yüklenemezse fallback göster
+  const handleImgError = useCallback(() => {
+    setImgError(true);
+  }, []);
 
   return (
     <section className="relative w-full min-h-screen flex items-center py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -131,7 +142,7 @@ const Hero = memo(() => {
               uygulamaları yaratmaya odaklanıyorum. Yazılım yolculuğuma lise
               yıllarında web tasarımıyla başladım ve Balıkesir Üniversitesi
               Bilgisayar Programcılığı bölümünde eğitim aldım. Şu anda Bilgen
-              Yazılım Akademi’de frontend bootcamp eğitimimi tamamlamak
+              Yazılım Akademi de frontend bootcamp eğitimimi tamamlamak
               üzereyim. HTML, CSS, JavaScript ve React başta olmak üzere;
               Tailwind CSS, Firebase, TypeScript ve Next.js gibi teknolojilerle
               projeler geliştiriyorum. Yazılım, benim için sadece bir meslek
@@ -204,15 +215,24 @@ const Hero = memo(() => {
           >
             <div className="relative group">
               <div className="relative h-64 sm:h-80 lg:h-96 w-full max-w-sm mx-auto lg:max-w-none rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="https://firebasestorage.googleapis.com/v0/b/portfolio-36161.firebasestorage.app/o/images%2FofficalProfile.png?alt=media&token=384d881e-b2d3-47bb-9589-5817344619a8"
-                  alt="Enes Yağmur"
-                  fill
-                  className="object-cover ml-16 object-center group-hover:scale-105 transition-transform duration-500"
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                  quality={85}
-                />
+                {!imgError ? (
+                  <Image
+                    src="https://firebasestorage.googleapis.com/v0/b/portfolio-36161.firebasestorage.app/o/images%2FofficalProfile.png?alt=media&token=384d881e-b2d3-47bb-9589-5817344619a8"
+                    alt="Enes Yağmur"
+                    fill
+                    className="object-cover ml-16 object-center group-hover:scale-105 transition-transform duration-500"
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                    quality={85}
+                    onError={handleImgError}
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full w-full bg-gray-100 dark:bg-gray-800">
+                    <span className="text-gray-400 dark:text-gray-500 text-sm">
+                      Profil resmi yüklenemedi
+                    </span>
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
               </div>
 

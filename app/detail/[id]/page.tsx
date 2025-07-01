@@ -176,6 +176,29 @@ const Detail: React.FC<DetailPageProps> = ({ params }) => {
                 ))}
               </div>
             </div>
+
+            {/* Project Stats */}
+            <div className="bg-gradient-to-br from-white/70 to-gray-50/70 backdrop-blur-sm rounded-xl p-2 border border-gray-200/50 shadow-sm">
+              <h3 className="text-lg font-bold text-gray-900 mb-4">
+                Proje İstatistikleri
+              </h3>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center p-2 bg-white/50 rounded-lg">
+                  <span className="text-gray-600 text-sm">
+                    Teknoloji Sayısı
+                  </span>
+                  <span className="text-gray-900 font-bold">
+                    {project.description.technologies.length}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center p-2 bg-white/50 rounded-lg">
+                  <span className="text-gray-600 text-sm">Özellik Sayısı</span>
+                  <span className="text-gray-900 font-bold">
+                    {project.description.Features.length}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Sidebar */}
@@ -228,29 +251,6 @@ const Detail: React.FC<DetailPageProps> = ({ params }) => {
                     {tech}
                   </span>
                 ))}
-              </div>
-            </div>
-
-            {/* Project Stats */}
-            <div className="bg-gradient-to-br from-white/70 to-gray-50/70 backdrop-blur-sm rounded-xl p-5 border border-gray-200/50 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">
-                Proje İstatistikleri
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center p-2 bg-white/50 rounded-lg">
-                  <span className="text-gray-600 text-sm">
-                    Teknoloji Sayısı
-                  </span>
-                  <span className="text-gray-900 font-bold">
-                    {project.description.technologies.length}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-white/50 rounded-lg">
-                  <span className="text-gray-600 text-sm">Özellik Sayısı</span>
-                  <span className="text-gray-900 font-bold">
-                    {project.description.Features.length}
-                  </span>
-                </div>
               </div>
             </div>
           </div>

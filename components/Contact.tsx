@@ -5,6 +5,34 @@ import { IoLocationSharp } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
 import Link from "next/link";
 import FormContact from "./FormContact";
+import { useMemo } from "react";
+import React from "react";
+
+// Basit ErrorBoundary
+function ErrorBoundary({ children }: { children: React.ReactNode }) {
+  const [hasError, setHasError] = React.useState(false);
+  return hasError ? (
+    <div className="p-6 bg-red-100 text-red-700 rounded-xl text-center">
+      Bir hata oluştu. Lütfen sayfayı yenileyin.
+    </div>
+  ) : (
+    <React.Suspense fallback={<div>Yükleniyor...</div>}>
+      <ErrorCatcher setHasError={setHasError}>{children}</ErrorCatcher>
+    </React.Suspense>
+  );
+}
+
+class ErrorCatcher extends React.Component<{
+  setHasError: (v: boolean) => void;
+  children: React.ReactNode;
+}> {
+  componentDidCatch() {
+    this.props.setHasError(true);
+  }
+  render() {
+    return this.props.children;
+  }
+}
 
 export default function Contact() {
   return (
@@ -46,7 +74,9 @@ export default function Contact() {
         <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr] gap-8 lg:gap-12">
           {/* Contact Form */}
           <div className="order-1 xl:order-none">
-            <FormContact />
+            <ErrorBoundary>
+              <FormContact />
+            </ErrorBoundary>
           </div>
 
           {/* Contact Info */}
@@ -152,43 +182,59 @@ export default function Contact() {
             <div className="w-16 h-0.5 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Link
-              href="https://www.linkedin.com/in/enes-ya%C4%9Fmur-4b6201249/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-white hover:bg-gray-50 rounded-xl transition-colors duration-200 border border-gray-200"
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center flex-shrink-0">
-                <FaLinkedin className="text-white text-xl" />
+          {/* Sosyal medya linklerini diziyle oluştur */}
+          {useMemo(() => {
+            const socialLinks = [
+              {
+                href: "https://www.linkedin.com/in/enes-ya%C4%9Fmur-4b6201249/",
+                icon: <FaLinkedin className="text-white text-xl" />,
+                bg: "from-blue-600 to-blue-700",
+                title: "LinkedIn",
+                desc: "Profesyonel Profil",
+                color: "text-blue-600",
+                descColor: "text-blue-800",
+                label: "LinkedIn profilim (yeni sekmede açılır)",
+              },
+              {
+                href: "https://github.com/enesyagmur",
+                icon: <FaSquareGithub className="text-white text-xl" />,
+                bg: "from-gray-800 to-black",
+                title: "GitHub",
+                desc: "Kod Portföyü",
+                color: "text-gray-600",
+                descColor: "text-gray-800",
+                label: "GitHub profilim (yeni sekmede açılır)",
+              },
+            ];
+            return (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                {socialLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className="flex items-center gap-3 p-4 bg-white hover:bg-gray-50 rounded-xl transition-colors duration-200 border border-gray-200"
+                  >
+                    <div
+                      className={`w-12 h-12 bg-gradient-to-br ${item.bg} rounded-lg flex items-center justify-center flex-shrink-0`}
+                    >
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className={`text-sm font-medium ${item.color} mb-1`}>
+                        {item.title}
+                      </p>
+                      <p className={`text-sm font-medium ${item.descColor}`}>
+                        {item.desc}
+                      </p>
+                    </div>
+                  </Link>
+                ))}
               </div>
-              <div>
-                <p className="text-sm font-medium text-blue-600 mb-1">
-                  LinkedIn
-                </p>
-                <p className="text-sm text-blue-800 font-medium">
-                  Profesyonel Profil
-                </p>
-              </div>
-            </Link>
-
-            <Link
-              href="https://github.com/enesyagmur"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 p-4 bg-white hover:bg-gray-50 rounded-xl transition-colors duration-200 border border-gray-200"
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-lg flex items-center justify-center flex-shrink-0">
-                <FaSquareGithub className="text-white text-xl" />
-              </div>
-              <div>
-                <p className="text-sm font-medium text-gray-600 mb-1">GitHub</p>
-                <p className="text-sm text-gray-800 font-medium">
-                  Kod Portföyü
-                </p>
-              </div>
-            </Link>
-          </div>
+            );
+          }, [])}
         </div>
       </div>
     </section>

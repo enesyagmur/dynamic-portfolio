@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo, memo } from "react";
+import React, { ReactNode, useMemo, memo, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -71,6 +71,24 @@ const SingleProject: React.FC<ProjectProps> = memo(({ item }) => {
     []
   );
 
+  // Görsel yüklenemezse fallback göster
+  const [imgError, setImgError] = useState(false);
+  const handleImgError = useCallback(() => setImgError(true), []);
+
+  // Linklerin geçerliliğini kontrol et
+  const isValidUrl = (url?: string) => {
+    if (!url) return false;
+    try {
+      new URL(url);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const hasLive = isValidUrl(item.live);
+  const hasGithub = isValidUrl(item.github);
+
   return (
     <article className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gray-200 transform hover:-translate-y-2">
       {/* Gradient Overlay */}
@@ -78,38 +96,25 @@ const SingleProject: React.FC<ProjectProps> = memo(({ item }) => {
 
       {/* Image Container */}
       <div className="relative overflow-hidden">
-        <div className="relative w-full h-48 sm:h-56">
-          <Image
-            src={item.image}
-            alt={`${item.name} project screenshot`}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-            priority
-          />
+        <div className="relative w-full h-36 sm:h-48 ">
+          {!imgError && item.image ? (
+            <Image
+              src={item.image}
+              alt={`${item.name || "Proje"} project screenshot`}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              priority
+              onError={handleImgError}
+            />
+          ) : (
+            <div className="flex items-center justify-center w-full h-full bg-gray-100 dark:bg-gray-800">
+              <span className="text-gray-400 dark:text-gray-500 text-sm">
+                Görsel yüklenemedi
+              </span>
+            </div>
+          )}
           {/* Image Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-
-        {/* Floating Action Buttons */}
-        <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-          <Link
-            href={item.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white/90 backdrop-blur-sm p-2.5 rounded-full text-gray-700 hover:text-blue-600 hover:bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-            aria-label="View live project"
-          >
-            <HiOutlineExternalLink className="w-4 h-4" />
-          </Link>
-          <Link
-            href={item.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white/90 backdrop-blur-sm p-2.5 rounded-full text-gray-700 hover:text-gray-900 hover:bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
-            aria-label="View GitHub repository"
-          >
-            <FaGithub className="w-4 h-4" />
-          </Link>
         </div>
       </div>
 
@@ -117,21 +122,22 @@ const SingleProject: React.FC<ProjectProps> = memo(({ item }) => {
       <div className="p-6 relative z-10">
         {/* Project Title */}
         <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-          {item.name}
+          {item.name || "Proje Adı Yok"}
         </h3>
 
         {/* Description */}
         <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-          {item.description.title}
+          {item.description?.title || "Açıklama bulunamadı."}
         </p>
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-4">
           {iconList.map(
-            (icon, idx) =>
+            (icon) =>
+              Array.isArray(item.used) &&
               item.used.includes(icon.name) && (
                 <div
-                  key={idx}
+                  key={icon.name}
                   className="bg-gray-50 hover:bg-gray-100 p-2 rounded-lg transition-colors duration-200 group/icon"
                   title={icon.name}
                 >
@@ -147,26 +153,30 @@ const SingleProject: React.FC<ProjectProps> = memo(({ item }) => {
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           {/* Links */}
           <div className="flex gap-4">
-            <Link
-              href={item.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200"
-              aria-label="View live project"
-            >
-              <TbWorld className="w-4 h-4" />
-              Live
-            </Link>
-            <Link
-              href={item.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200"
-              aria-label="View GitHub repository"
-            >
-              <FaGithub className="w-4 h-4" />
-              Code
-            </Link>
+            {hasLive && (
+              <Link
+                href={item.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-all duration-200"
+                aria-label="View live project"
+              >
+                <TbWorld className="w-4 h-4" />
+                Live
+              </Link>
+            )}
+            {hasGithub && (
+              <Link
+                href={item.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200"
+                aria-label="View GitHub repository"
+              >
+                <FaGithub className="w-4 h-4" />
+                Code
+              </Link>
+            )}
           </div>
 
           {/* Details Link */}

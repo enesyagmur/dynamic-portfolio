@@ -11,7 +11,15 @@ import { GiPapers } from "react-icons/gi";
 import { GiWhaleTail } from "react-icons/gi";
 import { TbHexagon3D } from "react-icons/tb";
 
-const tools = [
+// Tool tipini tanımla
+interface Tool {
+  name: string;
+  icon: React.ReactNode;
+  category: keyof typeof categoryColors;
+  description: string;
+}
+
+const tools: Tool[] = [
   {
     name: "VS Code",
     icon: <VscVscode className="text-blue-600" />,
@@ -116,11 +124,9 @@ const categoryColors = {
   Deploy: "bg-green-50 border-green-200",
   Design: "bg-orange-50 border-orange-200",
   "Version Control": "bg-gray-50 border-gray-200",
-};
+} as const;
 
-const Tools = () => {
-  const categories = [...new Set(tools.map((tool) => tool.category))];
-
+const Tools: React.FC = () => {
   return (
     <section
       id="tools"
@@ -140,9 +146,9 @@ const Tools = () => {
 
       {/* Tools Grid - Mobile First Approach */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 lg:gap-8">
-        {tools.map((tool, idx) => (
+        {tools.map((tool) => (
           <div
-            key={idx}
+            key={tool.name}
             className="group relative bg-white rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-gray-200 hover:-translate-y-2 cursor-pointer"
           >
             {/* Category Badge */}

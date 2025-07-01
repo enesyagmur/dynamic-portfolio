@@ -8,10 +8,26 @@ import {
 import { BiLogoTypescript } from "react-icons/bi";
 import { IoLogoFirebase } from "react-icons/io5";
 
-const Skills = () => {
-  const [hoveredSkill, setHoveredSkill] = useState(null);
+// Skill ve kategori tiplerini tanımla
+interface Skill {
+  name: string;
+  icon: React.ReactNode;
+  level: number;
+  category: keyof typeof categoryColors;
+  description: string;
+}
 
-  const skills = useMemo(
+const categoryColors = {
+  Styling: "from-blue-500 to-cyan-500",
+  Programming: "from-yellow-500 to-orange-500",
+  Framework: "from-purple-500 to-pink-500",
+  Backend: "from-green-500 to-teal-500",
+} as const;
+
+const Skills: React.FC = () => {
+  const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
+
+  const skills: Skill[] = useMemo(
     () => [
       {
         name: "CSS3",
@@ -73,16 +89,7 @@ const Skills = () => {
     []
   );
 
-  const categories = [...new Set(skills.map((skill) => skill.category))];
-
-  const categoryColors = {
-    Styling: "from-blue-500 to-cyan-500",
-    Programming: "from-yellow-500 to-orange-500",
-    Framework: "from-purple-500 to-pink-500",
-    Backend: "from-green-500 to-teal-500",
-  };
-
-  const getSkillLevelColor = (level) => {
+  const getSkillLevelColor = (level: number) => {
     if (level >= 90) return "from-green-400 to-green-600";
     if (level >= 80) return "from-blue-400 to-blue-600";
     if (level >= 70) return "from-yellow-400 to-yellow-600";
@@ -109,7 +116,7 @@ const Skills = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mb-16">
         {skills.map((skill, index) => (
           <div
-            key={index}
+            key={skill.name}
             className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-200 transform hover:-translate-y-2"
             onMouseEnter={() => setHoveredSkill(index)}
             onMouseLeave={() => setHoveredSkill(null)}
