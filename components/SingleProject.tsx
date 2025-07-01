@@ -126,7 +126,11 @@ const SingleProject: React.FC<ProjectProps> = memo(({ item }) => {
 
         {/* Description */}
         <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-          {item.description?.title || "Açıklama bulunamadı."}
+          {item.description?.title
+            ? item.description.title.length > 150
+              ? item.description.title.slice(0, 150) + "..."
+              : item.description.title
+            : "Açıklama bulunamadı."}
         </p>
 
         {/* Tech Stack */}

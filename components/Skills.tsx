@@ -52,7 +52,7 @@ const Skills: React.FC = () => {
       },
       {
         name: "JavaScript",
-        icon: <RiJavascriptFill className="text-yellow-600" />,
+        icon: <RiJavascriptFill className="text-yellow-400" />,
         level: 60,
         category: "Programming",
         description: "Modern ES6+ JavaScript",
@@ -80,7 +80,7 @@ const Skills: React.FC = () => {
       },
       {
         name: "Firebase",
-        icon: <IoLogoFirebase className="text-orange-600" />,
+        icon: <IoLogoFirebase className="text-yellow-400" />,
         level: 80,
         category: "Backend",
         description: "Backend servis platformu, veritabanı yönetimi",

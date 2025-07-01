@@ -48,19 +48,19 @@ const tools: Tool[] = [
     name: "DeepSeek",
     icon: <GiWhaleTail className="text-blue-500" />,
     category: "AI",
-    description: "AI araştırma platformu",
+    description: "AI asistanı",
   },
   {
-    name: "Cloudy AI",
+    name: "Claude Sonnet",
     icon: <FaCloud className="text-amber-600" />,
     category: "AI",
-    description: "Bulut tabanlı AI",
+    description: "AI asistanı",
   },
   {
     name: "Gemini",
     icon: <RiGeminiFill className="text-indigo-600" />,
     category: "AI",
-    description: "Google AI modeli",
+    description: "AI asistanı",
   },
   {
     name: "Perplexity",
@@ -88,7 +88,7 @@ const tools: Tool[] = [
   },
   {
     name: "Render",
-    icon: <SiDelicious className="text-rose-600" />,
+    icon: <SiDelicious className="text-render-600" />,
     category: "Deploy",
     description: "Cloud hosting",
   },
@@ -96,7 +96,7 @@ const tools: Tool[] = [
     name: "Stitch",
     icon: <RiTestTubeFill className="text-violet-600" />,
     category: "Deploy",
-    description: "Backend servis",
+    description: "UI asistan",
   },
   {
     name: "Canva",
