@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useMemo, memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -23,32 +23,35 @@ interface Icons {
   component: ReactNode;
 }
 
-const SingleProject: React.FC<ProjectProps> = ({ item }) => {
-  const iconList: Icons[] = [
-    { name: "css", component: <FaCss3Alt className="text-blue-400" /> },
-    { name: "scss", component: <FaSass className="text-pink-500" /> },
-    {
-      name: "tailwind",
-      component: <RiTailwindCssFill className="text-teal-600" />,
-    },
-    {
-      name: "javascript",
-      component: <RiJavascriptFill className="text-yellow-600  ml-2" />,
-    },
-    { name: "react", component: <FaReact className="text-blue-700  ml-2" /> },
-    {
-      name: "typescript",
-      component: <BiLogoTypescript className="text-blue-500  ml-2" />,
-    },
-    {
-      name: "nextjs",
-      component: <RiNextjsFill className="text-white  ml-2" />,
-    },
-    {
-      name: "firebase",
-      component: <IoLogoFirebase className="text-yellow-500  ml-2" />,
-    },
-  ];
+const SingleProject: React.FC<ProjectProps> = memo(({ item }) => {
+  const iconList: Icons[] = useMemo(
+    () => [
+      { name: "css", component: <FaCss3Alt className="text-blue-400" /> },
+      { name: "scss", component: <FaSass className="text-pink-500" /> },
+      {
+        name: "tailwind",
+        component: <RiTailwindCssFill className="text-teal-600" />,
+      },
+      {
+        name: "javascript",
+        component: <RiJavascriptFill className="text-yellow-600  ml-2" />,
+      },
+      { name: "react", component: <FaReact className="text-blue-700  ml-2" /> },
+      {
+        name: "typescript",
+        component: <BiLogoTypescript className="text-blue-500  ml-2" />,
+      },
+      {
+        name: "nextjs",
+        component: <RiNextjsFill className="text-white  ml-2" />,
+      },
+      {
+        name: "firebase",
+        component: <IoLogoFirebase className="text-yellow-500  ml-2" />,
+      },
+    ],
+    []
+  );
   return (
     <div className="w-[400px] md:w-[450px] z-30 mb-10 bg-neutral-900 p-4 rounded-xl hover:bg-neutral-800 mx-auto">
       <div className="text-sm prose prose-sm dark:prose-invert">
@@ -102,6 +105,6 @@ const SingleProject: React.FC<ProjectProps> = ({ item }) => {
       </div>
     </div>
   );
-};
+});
 
-export default SingleProject;
+export default memo(SingleProject);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo, memo } from "react";
 import { Spotlight } from "../components/ui/Spotlight";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import Image from "next/image";
@@ -7,11 +7,12 @@ interface HeroProps {
   scrollToContact: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ scrollToContact }) => {
+const Hero: React.FC<HeroProps> = memo(({ scrollToContact }) => {
   const [randomProfile, setRandomProfile] = useState<number>();
+  const memoizedProfile = useMemo(() => Math.round(Math.random() * 3), []);
   useEffect(() => {
-    setRandomProfile(Math.round(Math.random() * 3));
-  }, []);
+    setRandomProfile(memoizedProfile);
+  }, [memoizedProfile]);
 
   return (
     <div className="w-full h-[700px] md:h-screen flex flex-col lg:flex-row items-center justify-between md:justify-center relative  overflow-hidden">
@@ -87,6 +88,8 @@ const Hero: React.FC<HeroProps> = ({ scrollToContact }) => {
       </p>
     </div>
   );
-};
+});
+
+Hero.displayName = "Hero";
 
 export default Hero;

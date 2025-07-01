@@ -1,18 +1,19 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import { SparklesCore } from "./ui/Sparkles";
 import SingleProject from "./SingleProject";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import type { RootState, AppDispatch } from "@/store";
 import { fetchProjects } from "@/features/projectsThunk";
 import Loading from "./ui/Loading";
 import SomethingWrong from "./ui/SomethingWrong";
 import NoData from "./ui/NoData";
 
-export function Projects() {
+export const Projects = memo(function Projects() {
   const dispatch = useDispatch<AppDispatch>();
   const { projects, loading, error } = useSelector(
-    (state: RootState) => state.projects
+    (state: RootState) => state.projects,
+    shallowEqual
   );
 
   useEffect(() => {
@@ -55,4 +56,4 @@ export function Projects() {
       {content}
     </div>
   );
-}
+});

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 
-const FormContact = () => {
+const FormContact = memo(() => {
   const [formStatus, setFormStatus] = useState<"default" | "success" | "error">(
     "default"
   );
@@ -10,32 +10,35 @@ const FormContact = () => {
 
   const formLink = `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORM_ID}`;
 
-  const resetKey = () => {
+  const resetKey = useCallback(() => {
     setTimeout(() => {
       setKey((prevKey) => prevKey + 1);
     }, 1000);
-  };
+  }, []);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
 
-    const response = await fetch(formLink, {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    });
+      const response = await fetch(formLink, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    if (response.ok) {
-      setFormStatus("success");
-      resetKey();
-    } else {
-      setFormStatus("error");
-      resetKey();
-    }
-  };
+      if (response.ok) {
+        setFormStatus("success");
+        resetKey();
+      } else {
+        setFormStatus("error");
+        resetKey();
+      }
+    },
+    [formLink, resetKey]
+  );
 
   return (
     <form
@@ -93,6 +96,8 @@ const FormContact = () => {
       )}
     </form>
   );
-};
+});
+
+FormContact.displayName = "FormContact";
 
 export default FormContact;
