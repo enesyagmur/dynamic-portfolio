@@ -82,7 +82,7 @@ const Skills: React.FC = () => {
         name: "Firebase",
         icon: <IoLogoFirebase className="text-yellow-400" />,
         level: 70,
-        category: "Backend",
+        category: "Veritabanı servisi",
         description: "Backend servis platformu, veritabanı yönetimi",
       },
     ],
