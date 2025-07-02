@@ -36,8 +36,7 @@ Bu proje, **TypeScript**, **Next.js**, **Tailwind CSS**  kullanılarak geliştir
 
 ## 📸 Ekran Görüntüsü / Tanıtım
 
-> 
-
+> ![0702-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/ac36a9e6-fd33-435a-b548-0d0f32a3611f)
 
 
 ---
