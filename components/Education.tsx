@@ -1,29 +1,25 @@
 const educationData = [
   {
-    title: "İsmet Aktar Mesleki Teknik Anadolu Lisesi",
+    title: "İsmet Aktar Teknik Anadolu Lisesi",
     content:
-      "Web Tasarım - Yazılım ile tanışmam lisede gerçekleşti. Temel bilgisayar bileşenleri, algoritma mantığı ve giriş seviye kodlama eğitimi aldım.",
-    year: "2013-2017",
+      "Bilişim Teknolojileri - Web Programcılığı (2013-2017)\n" +
+      "Eğitim süresince algoritma mantığı ve problem çözme, C# ile temel programlama, SQL ile veritabanı giriş, HTML & CSS ile basit web sayfaları oluşturma, Dreamweaver ve Flash gibi araçlarla temel tasarım uygulamaları konularında giriş seviyesinde bilgi edindim. Not: Bu konularda eğitim aldım ancak bazılarını aktif kullanmadığım için bilgimi güncellemem gerekebilir.",
+    year: "2013 - 2017",
     icon: "🎓",
   },
   {
     title: "Balıkesir Üniversitesi",
     content:
-      "Bilgisayar Programcılığı - Tasarım, veri tabanı sistemleri ve internet programcılığı alanlarında temel seviye bilgi edindim ve uygulamalar geliştirdim.",
-    year: "2017-2019",
+      "Bilgisayar Programcılığı (2018-2020)\n" +
+      "Programlama temelleri, ofis yazılımları, ağ temelleri, veritabanı giriş (SQL), HTML-CSS ile web tasarım temelleri, bilgisayar donanımı ve yazılım kurulumu, nesne tabanlı programlamaya giriş (OOP), grafik tasarıma giriş, yazılım mimarilerine giriş gibi konularda temel düzeyde bilgi ve beceri kazandım. Bu eğitim süreci, frontend alanına yönelmeden önce teknik altyapımı oluşturdu.",
+    year: "2018 - 2020",
     icon: "💻",
-  },
-  {
-    title: "Anadolu Üniversitesi Açıköğretim",
-    content:
-      "Yönetim Bilişim Sistemleri (Devam ediyor) - Yazılımın yanında işletme yönetimi, girişimcilik ve müşteri ilişkileri gibi alanlarda bilgi sahibi oluyorum.",
-    year: "2025-",
-    icon: "📚",
   },
   {
     title: "Bilgen Yazılım Akademi",
     content:
-      "React ile Front-End Geliştirme Bootcamp - Modern JavaScript, ileri seviye React, form yönetimi, Redux, REST API entegrasyonu, JWT authentication, React Query, performans optimizasyonları, TypeScript, Next.js, Docker, deployment ve kariyer rehberliği konularını içeren yoğun bir eğitim almaya devam ediyorum.",
+      "React ile Front-End Geliştirme Bootcamp (2025)\n" +
+      "Modern JavaScript (ES6+), ileri seviye React, form yönetimi, Redux, React Query ile global ve sunucu durumu yönetimi, REST API entegrasyonu, JWT authentication, TypeScript ile tip güvenliği, Next.js ile SSR ve SEO, performans optimizasyonları, lazy loading, memoization, Docker, deployment süreçleri, iş başvurusu ve teknik mülakat hazırlığı gibi birçok konuda derinlemesine eğitim alıyorum. Bu eğitim, hem teknik bilgi derinliğimi hem de gerçek dünya projelerine hazır olma yetkinliğimi artırmaktadır.",
     year: "2025",
     icon: "🗺️",
   },
