@@ -1,8 +1,14 @@
 # 🪧 Kişisel Portföy Web Sitesi
 
-Bu proje, **TypeScript**, **Next.js**, **Tailwind CSS** ve **Aceternity UI** kullanılarak geliştirilmiş kişisel bir portföy web sitesidir. Projelerimi, yeteneklerimi ve iletişim bilgilerimi içeren modern, dinamik ve mobil uyumlu bir vitrin sunar.
+Bu proje, **TypeScript**, **Next.js**, **Tailwind CSS**  kullanılarak geliştirilmiş kişisel bir portföy web sitesidir. Projelerimi, yeteneklerimi ve iletişim bilgilerimi içeren modern, dinamik ve mobil uyumlu bir vitrin sunar.
 
 🔗 **Canlı Demo:** [dynamic-portfolio-indol.vercel.app](https://dynamic-portfolio-indol.vercel.app)
+
+---
+
+## 📸 Ekran Görüntüsü / Tanıtım
+
+> ![0702-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/ac36a9e6-fd33-435a-b548-0d0f32a3611f)
 
 ---
 
@@ -29,16 +35,8 @@ Bu proje, **TypeScript**, **Next.js**, **Tailwind CSS** ve **Aceternity UI** kul
 | ⚙️ TypeScript     | Güçlü tip desteği ile geliştirici deneyimi    |
 | ⚛️ Next.js        | React tabanlı modern ve hızlı framework       |
 | 🎨 Tailwind CSS   | Utility-first CSS framework                   |
-| 🌌 Aceternity UI  | Gelişmiş animasyonlu UI bileşenleri          |
 | 💌 Formspree      | İletişim formu için e-posta gönderimi        |
 | 💎 React Icons    | İkon bileşenleri                              |
-
----
-
-## 📸 Ekran Görüntüsü / Tanıtım
-
-> 🎥![portfolio-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/d02b5ec6-10ee-466d-9c9f-570a43d6efc3)
-
 
 
 ---
