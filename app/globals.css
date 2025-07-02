@@ -36,3 +36,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
   background-color: #802567;
 }
+
+html {
+  scroll-behavior: smooth;
+}
