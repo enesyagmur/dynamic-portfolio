@@ -8,6 +8,14 @@ import {
 import { BiLogoTypescript } from "react-icons/bi";
 import { IoLogoFirebase } from "react-icons/io5";
 
+const categoryColors = {
+  Styling: "from-blue-500 to-cyan-500",
+  Programming: "from-yellow-500 to-orange-500",
+  Framework: "from-purple-500 to-pink-500",
+  Backend: "from-green-500 to-teal-500",
+  "Veritabanı servisi": "from-amber-500 to-yellow-600",
+} as const;
+
 // Skill ve kategori tiplerini tanımla
 interface Skill {
   name: string;
@@ -16,13 +24,6 @@ interface Skill {
   category: keyof typeof categoryColors;
   description: string;
 }
-
-const categoryColors = {
-  Styling: "from-blue-500 to-cyan-500",
-  Programming: "from-yellow-500 to-orange-500",
-  Framework: "from-purple-500 to-pink-500",
-  Backend: "from-green-500 to-teal-500",
-} as const;
 
 const Skills: React.FC = () => {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);

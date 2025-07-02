@@ -71,7 +71,7 @@ const tools: Tool[] = [
   {
     name: "v0",
     icon: <RiCreativeCommonsZeroLine className="text-slate-600" />,
-    category: "Design",
+    category: "AI",
     description: "UI generator",
   },
   {
@@ -95,7 +95,7 @@ const tools: Tool[] = [
   {
     name: "Stitch",
     icon: <RiTestTubeFill className="text-violet-600" />,
-    category: "Deploy",
+    category: "AI",
     description: "UI asistan",
   },
   {
