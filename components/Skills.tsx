@@ -20,7 +20,6 @@ const categoryColors = {
 interface Skill {
   name: string;
   icon: React.ReactNode;
-  level: number;
   category: keyof typeof categoryColors;
   description: string;
 }
@@ -108,7 +107,7 @@ const Skills: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 mb-16">
         {skills.map((skill, index) => (
           <div
-            key={skill.name}
+            key={skill.name + index}
             className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-200 transform hover:-translate-y-2"
           >
             {/* Icon */}
