@@ -26,76 +26,67 @@ interface Skill {
 }
 
 const Skills: React.FC = () => {
-  const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
-
   const skills: Skill[] = useMemo(
     () => [
       {
         name: "CSS3",
         icon: <FaCss3Alt className="text-blue-600" />,
-        level: 70,
+
         category: "Styling",
         description: "Modern CSS özellikleri, responsive tasarım",
       },
       {
         name: "SCSS",
         icon: <FaSass className="text-pink-600" />,
-        level: 30,
+
         category: "Styling",
         description: "Verimli Css yapısı, mixin, variables, nested rules",
       },
       {
         name: "Tailwind CSS",
         icon: <RiTailwindCssFill className="text-teal-600" />,
-        level: 70,
+
         category: "Styling",
         description: "Utility-first CSS framework, responsive tasarım",
       },
       {
         name: "JavaScript",
         icon: <RiJavascriptFill className="text-yellow-400" />,
-        level: 50,
+
         category: "Programming",
         description: "Modern ES6+ JavaScript",
       },
       {
         name: "React",
         icon: <FaReact className="text-blue-500" />,
-        level: 70,
+
         category: "Framework",
         description: "Component yapısı, state yönetimi",
       },
       {
         name: "TypeScript",
         icon: <BiLogoTypescript className="text-blue-700" />,
-        level: 30,
+
         category: "Programming",
         description: "Güvenli tip yapısı, interface",
       },
       {
         name: "Next.js",
         icon: <RiNextjsFill className="text-gray-900" />,
-        level: 30,
+
         category: "Framework",
         description: "Seo Optimizasyonu, React Framework",
       },
       {
         name: "Firebase",
         icon: <IoLogoFirebase className="text-yellow-400" />,
-        level: 70,
+
         category: "Veritabanı servisi",
         description: "Backend servis platformu, veritabanı yönetimi",
       },
     ],
     []
   );
-
-  const getSkillLevelColor = (level: number) => {
-    if (level >= 90) return "from-green-400 to-green-600";
-    if (level >= 80) return "from-blue-400 to-blue-600";
-    if (level >= 70) return "from-yellow-400 to-yellow-600";
-    return "from-red-400 to-red-600";
-  };
 
   return (
     <section
@@ -119,16 +110,7 @@ const Skills: React.FC = () => {
           <div
             key={skill.name}
             className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-200 transform hover:-translate-y-2"
-            onMouseEnter={() => setHoveredSkill(index)}
-            onMouseLeave={() => setHoveredSkill(null)}
           >
-            {/* Skill Level Badge */}
-            <div className="absolute -top-3 -right-3 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center border-2 border-gray-100">
-              <span className="text-sm font-bold text-gray-700">
-                {skill.level}%
-              </span>
-            </div>
-
             {/* Icon */}
             <div className="flex justify-center mb-4">
               <div className="text-5xl sm:text-6xl transform group-hover:scale-110 transition-transform duration-300">
@@ -150,21 +132,6 @@ const Skills: React.FC = () => {
               >
                 {skill.category}
               </span>
-            </div>
-
-            {/* Progress Bar */}
-            <div className="mb-4">
-              <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                <div
-                  className={`h-full bg-gradient-to-r ${getSkillLevelColor(
-                    skill.level
-                  )} transition-all duration-1000 ease-out`}
-                  style={{
-                    width: hoveredSkill === index ? `${skill.level}%` : "0%",
-                    transitionDelay: hoveredSkill === index ? "200ms" : "0ms",
-                  }}
-                ></div>
-              </div>
             </div>
 
             {/* Description & Experience */}

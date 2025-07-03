@@ -1,10 +1,11 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, limit, query } from "firebase/firestore";
 import { db } from "../lib/firebase";
 
 export const getProjectsService = async () => {
   try {
     const projectsColRef = collection(db, "projects");
-    const projectsSnapShot = await getDocs(projectsColRef);
+    const projectsQuery = query(projectsColRef, limit(9));
+    const projectsSnapShot = await getDocs(projectsQuery);
     if (projectsSnapShot.empty) {
       throw new Error("SERVICE | Proje bulunamadı");
     }
