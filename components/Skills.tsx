@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { FaCss3Alt, FaSass, FaReact } from "react-icons/fa";
 import {
   RiTailwindCssFill,
