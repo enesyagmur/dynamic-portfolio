@@ -27,9 +27,9 @@ const Hero = memo(() => {
 
   const stats = useMemo(
     () => [
-      { value: "6+", label: "Tech" },
+      { value: "6+", label: "Technologies" },
       { value: "8+", label: "Tools" },
-      { value: "2+", label: "Years" },
+      { value: "2+", label: "Years Coding" },
       { value: "15+", label: "Projects" },
       { value: "1100+", label: "Commits" },
     ],
